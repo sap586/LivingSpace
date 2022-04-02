@@ -1,8 +1,21 @@
 <html>
 
     <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-    </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                
+                $.ajaxSetup({
+                    cache: false
+                });
+            
+                $("#download").click(function(){
+                    window.open('./LaTeX/sagar.creator.tex', 'sagar.creator.tex'); 
+//                    window.location.href = '';
+                });
+            });
+        </script>
     </head>
 
     <body>
@@ -12,7 +25,8 @@
         </p>
         
         <p>Thank you <a href="https://www.overleaf.com/" target="_blank">Sharelatex/Overleaf</a> for the ultimate LaTeX compiler.
-        To see the Source code of the resume, click <a href="./LaTeX/sagar.creator.tex" target="_blank">here</a>.</p>
+        To see the Source code of the resume, click <a href="https://raw.githubusercontent.com/contacttheteam/LivingSpace/master/LaTeX/sagar.creator.tex" target="_blank">here</a>.
+        <button id = "download">download</button>
         
         
         
