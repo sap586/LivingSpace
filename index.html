@@ -5,27 +5,28 @@
 
         <script>
             $(document).ready(function(){
-                
-                $.ajaxSetup({
-                    cache: false
-                });
             
                 $("#download").click(function(){
                     window.open('./LaTeX/sagar.creator.tex', 'sagar.creator.tex'); 
-//                    window.location.href = '';
                 });
             });
+            
+            function downloadLatex() {
+                window.open('./LaTeX/sagar.creator.tex', 'sagar.creator.tex');
+            }
+            
         </script>
     </head>
 
     <body>
         <h1>LivingSpace</h1>
-        <p>LivingSpace is a part of space where physical things are hosted. But everything physical has to have its source in non-physical and everything non-physical has to be hosted in a part of space which is capable of hosting non-physical things. It is the counter part of LivingSpace and will be introduced later in time (t).
-        Stay tuned to see how things unfold and how things manifest to serve the purpose existence. I wish you all the best in the journey.
-        </p>
+        <p>Hi! Welcome to the LivingSpace.</p>
         
-        <p>Thank you <a href="https://www.overleaf.com/" target="_blank">Sharelatex/Overleaf</a> for the ultimate LaTeX compiler.
-        To see the Source code of the resume, click <a href="https://raw.githubusercontent.com/contacttheteam/LivingSpace/master/LaTeX/sagar.creator.tex" target="_blank">here</a>.
+        <p>This is the LivingSpace. Keep it clean!</p>
+        
+        <p>Thank you <a href="https://www.overleaf.com/" target="_blank">Sharelatex/Overleaf</a> for the ultimate LaTeX compiler.<br>
+        To see the source code of the resume, click <a href="https://raw.githubusercontent.com/contacttheteam/LivingSpace/master/LaTeX/sagar.creator.tex" target="_blank">here</a>.<br>
+        To download the source code, click <a onclick="downloadLatex()">here</a>.
         <button id = "download">download</button>
         
         
