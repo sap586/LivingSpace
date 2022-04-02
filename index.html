@@ -1,4 +1,10 @@
 <html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    </head>
+
     <body>
         <h1>LivingSpace</h1>
         <p>LivingSpace is a part of space where physical things are hosted. But everything physical has to have its source in non-physical and everything non-physical has to be hosted in a part of space which is capable of hosting non-physical things. It is the counter part of LivingSpace and will be introduced later in time (t).
@@ -7,6 +13,37 @@
         
         <p>Thank you <a href="https://www.overleaf.com/" target="_blank">Sharelatex/Overleaf</a> for the ultimate LaTeX compiler.
         To see the Source code of the resume, click <a href="./LaTeX/sagar.creator.tex" target="_blank">here</a>.</p>
+        
+        
+        
+        <p id="GFG_UP" style="font-size: 20px; font-weight: bold;"> </p>
+  
+    <button onclick="gfg_Run()"> Click Here </button>
+    <p id="GFG_DOWN" style="color:green;
+        font-size: 26px; font-weight: bold;"> </p>
+  
+    <script>
+    var el_up = document.getElementById("GFG_UP");
+    var el_down = document.getElementById("GFG_DOWN");
+    el_up.innerHTML = "Click on the button to " 
+    + "get the stored cookies.";
+  
+    function getCookies() {
+        var cookies = document.cookie.split(';');
+        var ret = '';
+        for(var i = 1; i <= cookies.length; i++) {
+            ret += i + ' - ' + cookies[i - 1] + "<br>";
+        }
+        return ret;
+    }
+  
+    function gfg_Run() {
+        el_down.innerHTML = getCookies();
+    }
+    </script>
+        
+        
+        
         
         
     </body>
