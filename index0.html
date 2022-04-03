@@ -1,0 +1,65 @@
+<html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script>
+        
+        
+        
+            $(document).ready(function(){
+            
+//                $("font").css("background-color", "red");
+//                $("font").css("border-width", "10px");
+//                $("font").css("border-style", "outset");
+//                $("font").css("border-color", "yellow");
+            
+                $("#download").click(function(){
+                    window.open('./LaTeX/sagar.creator.tex', 'sagar.creator.tex'); 
+                });
+            });
+            
+            document.addEventListener('mousemove', (event) => {
+                console.log(`Mouse X: ${event.clientX}, Mouse Y: ${event.clientY}`);
+            });
+            
+            function downloadLatex() {
+                window.open('./LaTeX/sagar.creator.tex', 'sagar.creator.tex');
+            }
+            
+            document.addEventListener('mousemove', logKey);
+
+            function logKey(e) {
+            document.querySelector('#screen-log').innerText = `${e.clientX}` + "; " + `${e.clientY}`;
+            }
+
+            
+        </script>
+    </head>
+
+    <body style="border:orange; border-width:1px; border-style:solid;">
+        <h1>LivingSpace</h1>
+        <p>Hi! Welcome to the LivingSpace.</p>
+        <p id="screen-log"></p>
+        
+        <p>This is the LivingSpace. Keep it clean!</p>
+        
+        <p>Thank you <a href="https://www.overleaf.com/" target="_blank">Sharelatex/Overleaf</a> for the ultimate LaTeX compiler.<br>
+        To see the source code of the resume, click <a href="https://raw.githubusercontent.com/contacttheteam/LivingSpace/master/LaTeX/sagar.creator.tex" target="_blank">here</a>.<br>
+        To download the source code, click <a onclick="downloadLatex()">here</a>.
+        <button id = "download">download</button>
+                
+        <p style="border:orange; border-width:1px; border-style:solid;">Today's learning, is tomorrow's profession</p>
+        <font>
+            Site Under Construction </font>
+        <font style="border:rgb(163, 99, 71);">
+            JavaTpoint </font>
+        <font style="border:rgb(163, 99, 71);">
+            JavaTpoint </font>
+        <font style="border:rgb(163, 99, 71);">
+            </font>
+        <font style="border:rgb(163, 99, 71);">
+            Today's learning, is tomorrow's profession </font>
+        
+    </body>
+</html>
