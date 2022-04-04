@@ -32,6 +32,13 @@
             function logKey(e) {
             document.querySelector('#screen-log').innerText = `${e.clientX}` + "; " + `${e.clientY}`;
             }
+            
+            $.getJSON("https://api.ipify.org?format=json", function(data) {
+                $("#userIp").html(data.ip);
+            })
+//            $.getJSON("https://api.hatchways.io/assessment/blog/posts?tag=tech", function(data) {
+//                $("#userIp").html(data.posts);
+//            })
 
             
         </script>
@@ -41,6 +48,7 @@
         <h1>LivingSpace</h1>
         <p>Hi! Welcome to the LivingSpace.</p>
         <p id="screen-log"></p>
+        <p id="userIp"></p>
         
         <p>This is the LivingSpace. Keep it clean!</p>
         
