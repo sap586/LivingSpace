@@ -20,7 +20,7 @@
             });
             
             document.addEventListener('mousemove', (event) => {
-                console.log(`Mouse X: ${event.clientX}, Mouse Y: ${event.clientY}`);
+//                console.log(`Mouse X: ${event.clientX}, Mouse Y: ${event.clientY}`);
             });
             
             function downloadLatex() {
@@ -60,6 +60,61 @@
             </font>
         <font style="border:rgb(163, 99, 71);">
             Today's learning, is tomorrow's profession </font>
+            
+            
+            
+            
+            <div>
+            </br>-------------------------------------------------------------------------------------------------------------------------------------
+            </br>Test
+            <script>
+                var api_url = "https://api.hatchways.io/assessment/blog/posts?tag=tech";
+                $.ajax({
+                    url: "https://api.hatchways.io/assessment/blog/posts?tag=tech",
+                    type: "GET",
+                    success: function(result) {
+                        console.log(result);
+                        console.log(result.posts.length);
+                        let tab =   `<tr>   <th>Name</th>           <th>Office</th>         <th>Position</th>           <th>Salary</th>         </tr>`;
+                        for (i=0; i<result.posts.length; i++) {
+//                            console.log(result.posts[i].authorId);
+                            document.getElementById("employees").innerHTML = document.getElementById("employees").innerHTML + result.posts[i].authorId + "</br>";
+                        }
+                        
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                })
+                
+            </script>
+            
+            <!DOCTYPE html>
+            <html lang="en">
+                <head>
+                    <script></script>
+                    <link rel="stylesheet" href="style.css" />
+                    <meta charset="UTF-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <title>Document</title>
+                </head>
+                <body>
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border" role="status" id="loading">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                    <h1>Registered Employees</h1>
+                    <table id="employees"></table>
+                </body>
+            </html>
+
+            
+            
+            </br>---------------------------------------------------------------------------------------------------------------------------------
+            </div>
+            
+            
         
     </body>
 </html>
