@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html onkeypress="keyPress()">
+<head>
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+</style>
+</head>
+<body id="body">
+
+<h2><span style="font-size:30px;cursor:pointer" onclick="openNav()"> &#10005;</span></h2>
+
+<div id="mySidenav" class="sidenav" style="width:0px">
+  <a href="#" style="color:white;">&#9739;</a>
+  <a href="#" style="background-color:Violet; color:black;">&#9737</a>
+  <a href="#" style="background-color:Indigo; color:black;">&#9790</a>
+  <a href="#" style="background-color:Blue; color:black;">&#9791</a>
+  <a href="#" style="background-color:Green; color:black;">&#9792</a>
+  <a href="#" style="background-color:Yellow; color:black;">&#9794</a>
+  <a href="#" style="background-color:Orange; color:black;">&#9795</a>
+  <a href="#" style="background-color:Red; color:black;">&#9796</a>
+  <a href="#" style="color:white;">&#9738;</a>
+</div>
+
+<script>
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.open("POST", "https://api.innovativeastrosolutions.com/v0/horoscope");
+xhr.setRequestHeader("x-api-key", "3tdR6GYCBr71S28JrXGqu8ZayZpEacE2CUfFavve");
+
+function keyPress() {
+    if (event.keyCode == 120) {
+        openNav();
+    }
+}
+
+function openNav() {
+	if(document.getElementById("mySidenav").style.width == "0px") {
+	    document.getElementById("mySidenav").style.width = "1270px";
+    } else {
+    	document.getElementById("mySidenav").style.width = "0px";
+    }
+}
+
+</script>
+   
+</body>
+</html> 
