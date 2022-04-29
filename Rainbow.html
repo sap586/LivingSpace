@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html onkeypress="keyPress()">
+<html >
 <head>
 <style>
 body {
@@ -33,45 +33,53 @@ body {
 }
 
 </style>
+<script>
+
+window.onload = function() {
+  keyPress()
+};
+
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+  xhr.open("POST", "https://api.innovativeastrosolutions.com/v0/horoscope");
+  xhr.setRequestHeader("x-api-key", "3tdR6GYCBr71S28JrXGqu8ZayZpEacE2CUfFavve");
+  
+  function keyPress() {
+      if (event.keyCode == 120) {
+          openNav();
+      }
+  }
+  
+  function openNav() {
+    if(document.getElementById("mySidenav").style.width == "0px") {
+        document.getElementById("mySidenav").style.width = "1270px";
+      } else {
+        document.getElementById("mySidenav").style.width = "0px";
+      }
+  }
+  
+  </script>
 </head>
 <body id="body">
 
 <h2><span style="font-size:30px;cursor:pointer" onclick="openNav()"> &#10005;</span></h2>
 
 <div id="mySidenav" class="sidenav" style="width:0px">
-  <a href="#" style="color:white;">&#9739;</a>
-  <a href="#" style="background-color:Violet; color:black;">&#9737</a>
-  <a href="#" style="background-color:Indigo; color:black;">&#9790</a>
-  <a href="#" style="background-color:Blue; color:black;">&#9791</a>
-  <a href="#" style="background-color:Green; color:black;">&#9792</a>
-  <a href="#" style="background-color:Yellow; color:black;">&#9794</a>
-  <a href="#" style="background-color:Orange; color:black;">&#9795</a>
-  <a href="#" style="background-color:Red; color:black;">&#9796</a>
-  <a href="#" style="color:white;">&#9738;</a>
+  <a href="#" style="color:white;">                             &#9739; &gamma;</a>
+  <a href="#" style="color:white;">                             &#9739; x</a>
+  <a href="#" style="color:white;">                             &#9739; uv</a>
+  <a href="#" style="background-color:Violet; color:black;">  &#9737  ~380nm </a>
+  <a href="#" style="background-color:Indigo; color:black;">  &#9790  </a>
+  <a href="#" style="background-color:Blue;   color:black;">  &#9791  </a>
+  <a href="#" style="background-color:Green;  color:black;">  &#9792  </a>
+  <a href="#" style="background-color:Yellow; color:black;">  &#9794  </a>
+  <a href="#" style="background-color:Orange; color:black;">  &#9795  </a>
+  <a href="#" style="background-color:Red;    color:black;">  &#9796  ~740nm</a>
+  <a href="#" style="color:white;">                             &#9738; ir</a>
+  <a href="#" style="color:white;">                             &#9738; rf</a>
 </div>
 
-<script>
 
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-xhr.open("POST", "https://api.innovativeastrosolutions.com/v0/horoscope");
-xhr.setRequestHeader("x-api-key", "3tdR6GYCBr71S28JrXGqu8ZayZpEacE2CUfFavve");
-
-function keyPress() {
-    if (event.keyCode == 120) {
-        openNav();
-    }
-}
-
-function openNav() {
-	if(document.getElementById("mySidenav").style.width == "0px") {
-	    document.getElementById("mySidenav").style.width = "1270px";
-    } else {
-    	document.getElementById("mySidenav").style.width = "0px";
-    }
-}
-
-</script>
    
 </body>
 </html> 
