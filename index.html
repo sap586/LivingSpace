@@ -4,12 +4,38 @@
 
         <style>
             .button {
-            margin:5px; height: 25px; border:red; background-color:red; color:white;}
+                margin:5px; height: 25px; border:red; background-color:red; color:white; border-radius:2px;
+            }
         </style>
 
     </head>
 
     <body style="border:black; border-width:1px; border-style:solid;">
+
+
+        <marquee style="width:600px; float:right;" behavior="slide" direction="right" scrollamount="80">
+            <button id="clock" class="button">00:00</button></br>
+            <button id="clock" class="button">May 3</button>
+        </marquee></br>
+        <script>
+            function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s;
+            setTimeout(startTime, 1000);
+            }
+
+            function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+            }
+
+            startTime();
+        </script>
 
         <marquee style="width:1000px;" behavior="slide" direction="left" scrollamount="180">
             <button class="button">LaTeX</button>
@@ -17,18 +43,18 @@
         <marquee style="width:800px;" behavior="slide" direction="left" scrollamount="400">
             <button class="button">VIBGYOR</button>
         </marquee></br>
-        <marquee style="width:400px;" behavior="slide" direction="left" scrollamount="200">
-            <button class="button">Art</button>
+        <marquee style="width:470px;" behavior="slide" direction="left" scrollamount="160">
+            <button class="button">Travel</button>
         </marquee></br>
         <marquee style="width:470px;" behavior="slide" direction="left" scrollamount="160">
-            <button class="button">Fun & Travel</button>
+            <button class="button">Motivation</button>
         </marquee></br>
         <marquee style="width:600px;" behavior="slide" direction="left" scrollamount="120">
-            <button style="margin:5px; height: 25px; border:red; background-color:red; color:white;" onclick="window.location.href='./Website%3F%3F/index.html'">Website??</button>
+            <button class="button" onclick="window.location.href='./Website%3F%3F/index.html'">Website??</button>
         </marquee></br>
 
         <marquee behavior="scroll" direction="left" scrollamount="7">
-            last updated Mon May 2 7:09 AM: 
+            last updated Mon May 3 7:25 AM: 
         </marquee>
         <marquee behavior="scroll" direction="left" scrollamount="15">
             /* Work in Progress */
@@ -36,10 +62,11 @@
         <marquee behavior="scroll" direction="left" scrollamount="11">
             Being Designed
         </marquee>
-        
-
-
+        <marquee behavior="scroll" direction="left" scrollamount="11">
             
+        </marquee>
+        
+        </marquee></br>
         
     </body>
 </html>
