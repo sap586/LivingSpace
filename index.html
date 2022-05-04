@@ -15,11 +15,17 @@
 
         <marquee style="width:600px; float:right;" behavior="slide" direction="right" scrollamount="80">
             <button id="clock" class="button">00:00</button></br>
-            <button id="clock" class="button">May 3</button>
+        </marquee></br>
+        <marquee style="width:600px; float:right;" behavior="slide" direction="right" scrollamount="80">
+            <button id="day" class="button">May 3</button>
         </marquee></br>
         <script>
             function startTime() {
             const today = new Date();
+            console.log(today.getDate());
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            const days = ["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"];
+            console.log(months[today.getMonth()]);
             let h = today.getHours();
             let m = today.getMinutes();
             let s = today.getSeconds();
@@ -27,13 +33,14 @@
             s = checkTime(s);
             document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s;
             setTimeout(startTime, 1000);
+            document.getElementById('day').innerHTML =  days[today.getDay()] + " " + months[today.getMonth()] + " " + today.getDate();
             }
 
             function checkTime(i) {
             if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
             return i;
             }
-
+            
             startTime();
         </script>
 
