@@ -1,0 +1,242 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}, margin=0.5in]{geometry}
+
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\begin{comment}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\end{comment}
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Koziol for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%https://www.overleaf.com/project/58e9a336e878195c4627e1a0
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+\usepackage{amssymb}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+
+		 \href{https://contacttheteam.github.io/LivingSpace/}{ \Uparrow }  {\Large Sagar Panchal\textsc{}}\\
+		{\small \href{mailto:sagarp.creator@gmail.com}{sagarp.creator@gmail.com} 
+		\textbullet \textsc{ +1 (279) 842-6274}
+		\textbullet { Folsom, \textsc CA - 95630
+		}}\\
+		\small \href{https://www.linkedin.com/in/sagar-panchal-55b435122/}{https://www.linkedin.com/in/sagar-panchal-55b435122/}
+		\textbullet \small \href{https://contacttheteam.github.io/LivingSpace/}{https://contacttheteam.github.io/LivingSpace/}
+		%\textbullet { }%\href{https://github.com/sap586}{https://github.com/sap586}
+%		\textbullet { }\href{https://medium.com/@sagarpanchal004}{https://medium.com/@sagarpanchal004}
+\par}
+
+
+%--------------------SECTIONS-----------------------------------
+%Section: About--------------------------------------
+\section{About}
+\begin{tabular}{ll}
+%\textsc{Engineer with experience specializing in Robotics and Industrial Automation Domain,}\\
+%\textsc{looking forward towards more challenging role to serve the industry.}\\
+\textsc{Engineer with experience in Computers,  Automation \& Robotics.}\\
+\textsc{Looking forwards towards a role that offers better Individual and Professional growth.}\\
+\end{tabular}
+
+%Section: Education--------------------------------------
+\section{Education}
+\begin{tabular}{rl}
+\small{}\textsc{Jan 2016-17} & Master of Science, \textsc{ Electrical \& Computer Engineering}, \emph {(3.41/4)}\\
+ & \small{}\textbf{New York University}\\
+ \small{}\textsc{Jun 2010-14} & Bachelor of Engineering, \textsc{Instrumentation \& Control}, \emph {(7.04/10)}\\
+ & \small{}\textbf{Gujarat Technological University}
+\end{tabular}
+
+%Section: Technical Skills--------------------------------------
+\section{Skills}
+\begin{tabular}{rl}	\small{}
+ \small{}\textsc{Computer Programming:} & \small{}\textsc{Java(primary)}, \textsc{C/C++}, \textsc{Git}\\
+  & \small{}\textsc{Desktop Applications (JavaFX, AWT)}, \textsc{Web Applications (HTML, CSS, Javascript)}\\
+  
+ \small{}\textsc{Industrial Automation:} & \small{}\textsc{Micro-controllers \& Single Board Computers},\\% \textsc{(Arduino, Raspberry Pi, Particle, Parallax BS2)},\\
+ & \textsc{PLCs(Ladder-Logic)}, \textsc{HMI/SCADA}\\
+% \small{}\textsc{Software:} & \small{}\textsc{Netbeans (Most Recent)}, \textsc{Android Studio}, \textsc{Atmel Studio}, \textsc{AutoCAD}, \textsc{TIA-Portal}
+\end{tabular}
+
+%Section: Work Experience--------------------------------------
+\section{Work Experience}
+
+\textbf{Automation Engineer} \hfill \emph {Jan 2022 - Present}\\
+ &\textsc{Nor-Cal Controls}, California
+
+\textbf{Software Engineer, Machine Automation} \hfill \emph {Feb 2018 - Nov 2021}\\
+ &\textsc{Mini-Circuits, Inc.}, New York\\
+ \textbullet{} Primarily responsible for development and maintenance of Software for Robotics and Computer Vision Projects.\\
+  \textbullet{} Upgrading legacy Control Programs and rewrite them using new technology (mostly Java).\\
+  \textbullet{} Troubleshooting machine/automation/software issues related to production.\\
+ \textbullet{} Development and maintenance of the Website: \href{https://www.minicircuits.com/}{https://www.minicircuits.com/}\\
+ \textbullet{} Development and maintenance of Web/Desktop Applications to support Database Maintenance.\\
+ \textbullet{} \textbf{Universal Rotary Machine:}\\
+ \textbullet{} Integrated capabilities from different Machines into one to include more range of products to be tested.\\
+  \textbullet{} Successfully implemented Visual Inspection on the machine before packing the units.\\
+  \textbullet{} \textbf{Laser Measurement System for Mechanical Switches:}\\
+  \textbullet{} An R\&D Project to verify dimensions of Various Switch bodies using a Laser Displacement Sensor.
+%   \textbullet{} Documenting project status on Agile tool (JIRA).
+  
+ %\textbullet{} Technologies used includes but not limited to Java, JavaFX, JNI, VB, C++, OpenCV, SQL, HTML, CSS, Javascript.
+ 
+\textbf{Developer Intern} \hfill \emph {Aug 2017 - Feb 2018}\\
+ &\textsc{Revmax Fleet Optimization}, New York\\
+ \textbullet{} Developing Firmware for \emph{SidewalkIQ} Sensor using Doppler Radar to monitor sidewalk activities.\\
+ \textbullet{} Successfully deployed sensors at various NYC locations.\\
+ \textbullet{} R\&D to improve data consistency and efficiency of data storage/transfer to Server for further processing.
+ 
+\textbf{Instructor (ITEST Program)} \hfill \emph {Sep - Dec 2017}\\
+ &\textsc{Robotics \& Mechatronics Department, NYU}, New York\\
+ \textbullet{} Mentor to Robotics Club Programming Team for Robotics competitions (First Robotics \& Vex Robotics).\\
+ \textbullet{} Teaching concepts of Computer Programming to Robotics Club Team.
+%  \textbullet{} \textbf{Detect-Me (Face Detection Project) - Java \& JavaCV: } \href{https://github.com/sap586/detectMe}{https://github.com/sap586/detectMe}.
+ 
+\textbf{Lead Instructor (CrEST Program)} \hfill \emph {May - Aug 2017}\\
+ &\textsc{Center for K12 STEM Education, NYU}, New York\\
+ \textbullet{} Training High School Interns with Computer Programming (Arduino C), IoT, Robotics \& 3D-Printing activities.\\
+%  \textbullet{} Leading the summer K-12 class.\\
+ \textbullet{} \textbf{Autonomous Car (Mouse in a Maze) - STM32 Board: } \href{https://github.com/sap586/RTES_Project}{https://github.com/sap586/RTES_Project}\\
+ \textbullet{} \textbf{Wireless Robot Controller - Arduino: } \href{https://github.com/sap586/WirelessRobotDay5Activity}{https://github.com/sap586/WirelessRobotDay5Activity}
+ 
+ \textbf{Design Engineer} \hfill \emph {Jun 2014 - Jan 2016}\\
+ &\textsc{Prima Automation}, Ahmedabad, India\\
+ \textbullet{} Embedded Software Development on PLCs, micro-controllers \& Report Generation.\\
+ \textbullet{} Front-end (UX) design on HMI/SCADA for Industrial Automation applications.\\
+ \textbullet{} Troubleshooting and upgrading legacy  Automation projects \emph{(mostly on Siemens Systems)}.\\
+ \textbullet{} Electrical \& Control Panel Layout for Industrial Automation and Robotics \emph{(E-plan, AutoCAD)}.
+ 
+ \textbf{Trainee Engineer} \hfill \emph {Aug 2013 - May 2014}\\
+ &\textsc{Neoplast (I) Pvt. Ltd.}, Ahmedabad, India\\
+ \textbullet{} Embedded Software Development on Siemens PLC and Front-end (UX) Design on SCADA.
+ 
+%  \end{tabular}
+
+\end{document}
+ 
+%\section{Areas of Interest}
+%\hspace{1cm}\small{}\begin{minipage}{35em}
+%\textsc{Software Development}\\
+%\textsc{Robotics \& Industrial Automation}\\
+%\textsc{Embedded Systems}
+%\end{minipage}
+
+%Section: Projects
+%\section{Recent Projects}
+
+%\begin{tabular}{rl}
+
+
+ %\textbf{Mini-Circuits} & \textbf{Universal Rotary Machine - Java:}\\
+%& \begin{minipage}{52em}
+%{\small Integrated capabilities from different machines into one to include more range of products to be tested.\\
+%Fetching captured Image from VisionServer to perform Visual Inspection before packing the units}
+%\end{minipage}\\
+
+ %\textbf{Mini-Circuits} & \textbf{Laser Measurement System for %Mechanical Switches - Java:}\\
+%& \begin{minipage}{52em}
+%{\small An R\&D Project to verify dimensions of Various Switch bodies using a Laser Displacement Sensor.}
+%\end{minipage}\\
+
+% \textbf{Mini-Circuits} & \textbf{Thermal Cycling Chamber - Java:}\\
+%& \begin{minipage}{52em}
+%{\small Designed PID algorithm to switch between temperatures inside a chamber where test units are placed.}
+%\end{minipage}\\
+
+ %\textbf{Revmax} & \textbf{Sidewalk IQ - Particle:}\\
+%& \begin{minipage}{52em}
+%{\small An IoT project where data from Doppler Radar is processed to give number of people walking on the sidewalk.% Development of Multi-threaded Algorithm for storage of new data and transfer at a predetermined interval. This data is sent over Bluetooth to Hub which sends further to a cloud server.}
+%\end{minipage}\\
+
+%  \textbf{2018} & \textbf{Detect-Me (Face Detection Project) - Java \& JavaCV: } \href{https://github.com/sap586/detectMe}{https://github.com/sap586/detectMe}\\
+%& \begin{minipage}{52em}
+%{\small A Face Detection and Evaluation Project based on Real-Time Computer Vision Library. The Programming Language used is Java. The project is 'Under Construction' and work towards evaluation against the data set at \href{http://vis-www.cs.umass.edu/fddb/}{http://vis-www.cs.umass.edu/fddb/} is being done presently.}
+%\end{minipage}\\
+
+
+%  \textbf{K12} & \textbf{Wireless Robot Controller - Arduino: } \href{https://github.com/sap586/WirelessRobotDay5Activity}{https://github.com/sap586/WirelessRobotDay5Activity}\\
+%& \begin{minipage}{52em}
+%{\small Wireless Joystick Controller was developed to control a Robot. Data from a 2-Axis Joystick were sent over a 315 MHz RF Transmitter. The Robot having a receiver module, was made to be controlled accordingly. Speed and direction of the Robot were controlled based on the received signal.}
+%\end{minipage}\\
+
+
+ %\textbf{M.S.} & \textbf{MIPS Architecture:}\\
+%& \begin{minipage}{52em}
+%{\small Implementation of a triangular number series to understand architecture of MIPS CPU. Two additional instructions, \emph{Register Indirect \& Displacement} were added to a MIPS CPU. The FPGA board DE0-nano was developed and software used was Quartus Altera.}
+%\end{minipage}\\
+
+
+ %\textbf{M.S.} & \textbf{Autonomous Car (Mouse in a Maze) - STM32 Board: } \href{https://github.com/sap586/RTES_Project}{https://github.com/sap586/RTES_Project}\\
+%& \begin{minipage}{52em}
+%{\small \emph{Autonomous Car} that find its way out of the maze on its own. DC motors were controlled by PWM and environment obstacles were detected using ultrasonic sensors. Software was developed on C++ for STM32 board.}
+%\end{minipage}\\
+
+
+% \textbf{M.S.} & \textbf{Smart Mug: } \href{https://github.com/sap586/Smart_Mug_Project}{https://github.com/sap586/Smart_Mug_Project}
+%& \begin{minipage}{52em}
+%{\small \emph{Smart Mug} warns its owner if enough water is not consumed throughout the day. The Mug was made to contact the owner's cell-phone connected over a WiFi network. Amazing feature like \emph{Text-to-speech} (Emic-2) module was added and embedded software was developed}
+%\end{minipage}\\
+
+\end{tabular}
+
+\end{document}
