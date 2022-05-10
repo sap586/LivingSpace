@@ -1,0 +1,54 @@
+<html style="border:blue; border-width:1px; border-style:solid;">
+
+    <head>
+
+
+    </head>
+
+    <body style="border:blueviolet; border-width:1px; border-style:solid;">
+
+        <pre>
+            <code>
+              p { color: red; }
+              body { background-color: #eee; }
+            </code>
+          </pre>
+          <textarea disabled> code </textarea>
+          <pre><code>
+            code here, escape it yourself.
+        </code></pre>
+        
+
+        <textarea style="width:100%;" rows="15" id="list_content">
+            <?php
+            $filename='sagar.creator.tex';
+            $size=0;
+            if(file_exists($filename))
+             {
+         
+                 if( file_get_contents($filename)) 
+                     {
+                         if (!$handle = fopen($filename, 'a'))
+                             {
+                                 echo "Temporary server error, sorry for the inconvenience.";
+                             }
+                             else
+                             {
+                                 //you can add regex here to replace string before echoing the file contents.
+                                 echo file_get_contents($filename);
+                             }
+                     }
+             }
+            ?>
+            </textarea>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
