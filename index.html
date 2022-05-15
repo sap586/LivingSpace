@@ -22,10 +22,10 @@
         <script>
             function startTime() {
             const today = new Date();
-            console.log(today.getDate());
+//            console.log(today.getDate());
             const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
             const days = ["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"];
-            console.log(months[today.getMonth()]);
+//            console.log(months[today.getMonth()]);
             let h = today.getHours();
             let m = today.getMinutes();
             let s = today.getSeconds();
@@ -66,9 +66,17 @@
             <button class="button" onclick="window.location.href='./Paint/Paint.html'">Sa &#9796</button>
         </marquee></br>
 
-        <marquee behavior="scroll" direction="left" scrollamount="7">
+        <marquee id="lastUpdate" behavior="scroll" direction="left" scrollamount="7">
             last updated Mon May 3 7:25 AM: 
         </marquee>
+        <script>
+            fetch("https://api.github.com/repos/contacttheteam/LivingSpace/commits")
+                .then((res) => res.json())
+                .then((data) => {
+                    document.getElementById('lastUpdate').innerHTML =  'last updated on ' + data[0].commit.author.date;
+                });
+                
+        </script>
         <marquee behavior="scroll" direction="left" scrollamount="10">
             Being Designed
         </marquee>
