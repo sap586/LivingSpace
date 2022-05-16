@@ -11,6 +11,7 @@
 \usepackage{titlesec}					%custom \section
 \usepackage{hyperref}
 \usepackage{lipsum}
+\usepackage{tikz}
 %\usepackage{twemojis}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
@@ -40,7 +41,7 @@
 
 %--------------------TITLE-------------
 \par	{\centering
-	ॐ																																\\
+%	ॐ																																\\
 	\href{https://contacttheteam.github.io/LivingSpace/}{$ \Uparrow$}{sagarPanchal}																																\\
 	\small \href{mailto:sagarp.creator@gmail.com}{sagarp.creator@gmail.com}		\textbullet{+1 (279) 842-6274}		\textbullet {Folsom, CA - 95630}																		\\
 	\small \href{https://www.linkedin.com/in/sagar-panchal-55b435122/}{https://www.linkedin.com/in/sagar-panchal-55b435122/}		\textbullet \href{https://contacttheteam.github.io/LivingSpace/}{https://contacttheteam.github.io/LivingSpace/}		\par}
@@ -123,6 +124,21 @@
 \textbullet	{	Embedded Software Development on Siemens PLC and Front-end (UX) Design on SCADA.														}	\\
 %
 \hrule
-\small 	{	\hfill {This document is prepared using \LaTeX. Click \href{https://raw.githubusercontent.com/contacttheteam/LivingSpace/master/LaTeX/sagarp.creator.tex}{here} to download the source code.}																	}\\	
+\begin{tikzpicture}
+%\draw (0,0) grid (4,4);
+\draw (0.25,0.25) -- (0.25,-0.25);
+\draw (0.25,-0.25) -- (-0.25,-0.25);
+\draw (-0.25,-0.25) -- (-0.25,0.25);
+\draw (-0.25,0.25) -- (0.25,0.25);
+
+\draw (0.25,0.25) -- (-0.25,-0.25);
+\draw (0.25,-0.25) -- (-0.25,0.25);
+
+\draw (0,0.25) -- (0.25,0);
+\draw (0.25,0) -- (0,-0.25);
+\draw (0,-0.25) -- (-0.25,0);
+\draw (-0.25,0) -- (0,0.25);
+\end{tikzpicture}
+\small 	{	\hfill {This document is prepared using \LaTeX. Click \href{https://raw.githubusercontent.com/contacttheteam/LivingSpace/master/LaTeX/sagarp.creator.tex}{here} to download the source code.}	\\
 
 \end{document}
