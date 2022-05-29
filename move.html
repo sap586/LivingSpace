@@ -3,52 +3,60 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+        <script>
+            $(function()
+            {
+                var expanded = false;
+                $('#sidebar').click(function()
+                                    {
+                                        if (!expanded)
+                                        {
+                                            $(this).animate({'left' : '0px'}, {duration : 400});
+                                            expanded = true;
+                                        }
+                                        else
+                                        {
+                                            $(this).animate({'left' : '565px'}, {duration: 400});
+                                            expanded = false;
+                                        }
+                                    });
+            });
+        </script>
 
         <style>
-
-            div{
-                
-                width: 30px;
-                height:30px;
-                margin: 20px;
-                border-radius: 50%;
+            #mainContainer
+            {
+                width: 610px;
+                height: 100%;
+                overflow: hidden;
             }
 
+            .sidebar
+            {
+                float: right;
+                height: 200px;
+                width: 100%;
+                left: 565px;
+                border: 2px red dashed;
+                background-color: lime;
+                position: relative;
+            }
+
+            #steam
+            {
+                height: 200px;
+                width: 400px;
+                border: 2px red dashed;
+            }
         </style>
     </head>
 
     <body>
 
-        <div id="first_element" style="position: relative; background-color: red; top:50px;"></div>
-        <div id="second_element" style="background-color: green; top:150px"></div>
-
-        <button id="clickmes" onclick="f()">Click Me</button>
-
-
-        <script>
-
-
-            function f(){
-
-                $("#second_element").animate({"top":"10px"},100, function() {});
-
-
-                var firstDivPosition=$("#first_element").position();
-                var secondDivPosition=$("#second_element").position();
-
-                var topFirst =firstDivPosition.top.toString()+'px';
-                var topSecond =secondDivPosition.top.toString()+'px';
-
-                if(firstDivPosition.top==secondDivPosition.top) {
-                    $("#second_element").animate({"top":"0px"},100, function() {});
-                } else {
-                    $("#second_element").animate({"top":topSecond},100, function() {});
-                }
-
-
-            }
-
-        </script>
+        <div id="mainContainer">
+            <div id="sidebar" class="sidebar"></div>
+            <div id="steam"></div>
+        </div>
         
     </body>
 </html>
