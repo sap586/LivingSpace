@@ -1,0 +1,127 @@
+<html style="border:black; border-width:1px; border-style:solid;">
+
+    <head>
+
+        <style>
+            .button {
+                margin:5px; height: 25px; border:red; background-color:red; color:white; border-radius:2px;
+            }
+        </style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script src="hhttps://github.com/dreasgrech/jsLatex/blob/master/jquery.jslatex.js"></script>
+<script src="jquery.jslatex.js"></script>
+<script>
+$(function () {
+    $(".latex").latex();
+});
+</script>
+
+    </head>
+
+    <body style="border:black; border-width:1px; border-style:solid;">
+
+        <div style="border:black; border-width:1px; border-style:solid; height:100px;"></div>
+
+
+        <marquee style="width:600px; float:right;" behavior="slide" direction="right" scrollamount="80">
+            <button id="clock" class="button">00:00</button></br>
+        </marquee></br>
+        <marquee style="float:right;" behavior="slide" direction="right" scrollamount="380">
+            <button id="day" class="button">May 3</button>
+        </marquee></br>
+        <script>
+            function startTime() {
+            const today = new Date();
+//            console.log(today.getDate());
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            const days = ["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"];
+//            console.log(months[today.getMonth()]);
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s;
+            setTimeout(startTime, 1000);
+            document.getElementById('day').innerHTML =  days[today.getDay()] + " " + months[today.getMonth()] + " " + today.getDate();
+            }
+
+            function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+            }
+            
+            startTime();
+        </script>
+
+        <marquee style="width:1000px;" behavior="slide" direction="left" scrollamount="180">
+            <button class="button" onclick="window.location.href='./LaTeX/sagar.creator.tex'">Su &#9737</button>
+        </marquee></br>
+        <marquee style="width:800px;" behavior="slide" direction="left" scrollamount="400">
+            <button class="button">Mo &#9790</button>
+        </marquee></br>
+        <marquee style="width:470px;" behavior="slide" direction="left" scrollamount="160">
+            <button class="button">Me &#9791</button>
+        </marquee></br>
+        <marquee style="width:470px;" behavior="slide" direction="left" scrollamount="160">
+            <button class="button">Ve &#9792</button>
+        </marquee></br>
+        <marquee style="width:600px;" behavior="slide" direction="left" scrollamount="120">
+            <button class="button" onclick="window.location.href='./Website%3F%3F/index.html'">Ma &#9794</button>
+        </marquee></br>
+        <marquee style="width:600px;" behavior="slide" direction="left" scrollamount="120">
+            <button class="button" onclick="window.location.href='./Website%3F%3F/Quotes.html'">Ju &#9795</button>
+        </marquee></br>
+        <marquee style="width:600px;" behavior="slide" direction="left" scrollamount="120">
+            <button class="button" onclick="window.location.href='./Paint/Paint.html'">Sa &#9796</button>
+        </marquee></br>
+
+        <marquee id="lastUpdate" behavior="scroll" direction="left" scrollamount="7">
+            last updated Mon May 3 7:25 AM: 
+        </marquee>
+        <script>
+            fetch("https://api.github.com/repos/contacttheteam/LivingSpace/commits")
+                .then((res) => res.json())
+                .then((data) => {
+                    document.getElementById('lastUpdate').innerHTML =  'last updated on ' + data[0].commit.author.date;
+                });
+                
+        </script>
+        <marquee behavior="scroll" direction="left" scrollamount="10">
+            Being Designed
+        </marquee>
+        <marquee behavior="scroll" direction="right" scrollamount="8">
+            Being Designed
+        </marquee>
+        </br></br></br></br>
+        <marquee behavior="scroll" direction="left" scrollamount="9">
+            This Project is incomplete,
+        </marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="8">
+            j u s t L i k e C r e a t i o n
+        </marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="18">
+            New look coming soon.
+        </marquee>
+
+
+
+
+        
+        <div class="latex">
+            \int_{0}^{\pi}\frac{x^{4}\left(1-x\right)^{4}}{1+x^{2}}dx =\frac{22}{7}-\pi
+        </div>
+
+
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
