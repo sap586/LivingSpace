@@ -12,20 +12,58 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <script>
+          var ipadd = "";
+          
+          $.getJSON("https://api.ipify.org/?format=json", function(e) { ipadd = e.ip });
 
-          $.getJSON("https://api.ipify.org/?format=json", function(e) { alert(
+          $.getJSON("https://api.ipify.org/?format=json", getIp);
+          
+          function getIp(data)
+          {
+            alert(  window + ": " + window.screen.width + " X " + window.screen.height + "\n" +
+                    jQuery().jquery + "\n" +
+                    data + ": " + data.ip + "\n" +
+                    // e.ip + "\n" +
+                    "Thanks for being here" + "\n" +
+                    "This is a never ending project, you have to keep coming back!" + "\n" +
+                    "You are proud owner of a mac!" + "\n" + 
+                    "Time is the best thing you can utilize" + "\n" +
+                    "Time is the best thing you can utilize");
+
+            return f();
+          }
+
+          function f() {
+            alert(44);
+          }
+
+          // var R1 = new Rectangle(1, 1);
+          // var R2 = new Rectangle(2, 2);
+
+          // class Rectangle {
+          //   constructor(height, width) {
+          //     this.height = height;
+          //     this.width = width;
+          //   }
+          //   print() {
+          //     alert(this.height + "x" +this.width);
+          //   }
+          // }
+
+
+          // $.getJSON("https://api.ipify.org/?format=json", function(e) { alert(
             
 
 
-                                                                              window.screen.width + " X " + window.screen.height + "\n" +
-                                                                              window + "\n" + 
-                                                                              jQuery().jquery + "\n" + 
-                                                                              e.ip + "\n" +
-                                                                              "Thanks for being here" + "\n" +
-                                                                              "This is a never ending project, you have to keep coming back!" + "\n" +
-                                                                              "You are proud owner of a mac!" + "\n" + 
-                                                                              "Time is the best thing you can utilize" + "\n" +
-                                                                              "Time is the best thing you can utilize"
+          //                                                                     window.screen.width + " X " + window.screen.height + "\n" +
+          //                                                                     window + "\n" + 
+          //                                                                     jQuery().jquery + "\n" + 
+          //                                                                     e.ip + "\n" +
+          //                                                                     "Thanks for being here" + "\n" +
+          //                                                                     "This is a never ending project, you have to keep coming back!" + "\n" +
+          //                                                                     "You are proud owner of a mac!" + "\n" + 
+          //                                                                     "Time is the best thing you can utilize" + "\n" +
+          //                                                                     "Time is the best thing you can utilize"
 
 
                                                                               
@@ -35,12 +73,17 @@
 
 
 
-                                                                              ) })
-   </script>
+          //                                                                     ) })
+            // alert(ipadd);
+
+
+    </script>
 
   </head>
 
   <body>
+
+
 
   </body>
 

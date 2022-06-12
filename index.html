@@ -13,6 +13,16 @@
             function getWidthHeight(t) {
                 alert(t.clientWidth + " x " + t.clientHeight);
             }
+
+            function myFunction() {
+                var x = document.getElementById("myDIV");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+
         </script>
 
     </head>
@@ -33,14 +43,12 @@
             <div style="margin-right: 0.75%;">
                 <button onclick="window.open('./');" style="width: 5%; height: 60%; float: right; margin-top: 0.75%; margin-left: 0.75%;">HTML</button>
                 <button style="width: 5%; height: 60%; float: right; margin-top: 0.75%; margin-left: 0.75%;">LaTeX</button>
-                <button style="width: 5%; height: 60%; float: right; margin-top: 0.75%;"></button>
-                <button id="logoButton" style="width: 2.5%; height: 60%; float: left; margin-top: 0.75%; margin-left: 0.75%;"></button>
+                <button onclick="myFunction();" style="width: 5%; height: 60%; float: right; margin-top: 0.75%;"></button>
+                <button onclick="myFunction();" id="logoButton" style="width: 2.5%; height: 60%; float: left; margin-top: 0.75%; margin-left: 0.75%;"></button>
+
+                  
 
 
-
-                <script>
-                    var rect = document.getElementById("logoButton").getBoundingClientRect();
-                </script>
 
 
             </div>
@@ -57,6 +65,9 @@
             <div style="margin-right: 0.75%;">
             </div>
         </div>
+
+        <iframe id="myDIV" STYLE="display: none; position: absolute; top: 40px; left: 40px; WIDTH:800PX; height: 600PX;" src="/Users/span/Desktop/LivingSpace/LaTex/sa2sanf.pdf">
+
 
 
 
