@@ -23,12 +23,16 @@
                 }
             }
 
+            
+
         </script>
 
     </head>
 
-    <body>
+    <body class="rndmClr">
+        
         <script>
+
 //            alert(document.body);
             var style = window.getComputedStyle(document.body);
             document.body.style.marginTop       = "0px";
@@ -39,12 +43,15 @@
 
 
         </script>
-        <div style="height: 8%; text-align: center; background-color: #d3d3d3; border: #d3d3d3;">
-            <div style="margin-right: 0.75%;">
-                <button onclick="window.open('./');" style="width: 5%; height: 60%; float: right; margin-top: 0.75%; margin-left: 0.75%;">HTML</button>
-                <button style="width: 5%; height: 60%; float: right; margin-top: 0.75%; margin-left: 0.75%;">LaTeX</button>
-                <button onclick="myFunction();" style="width: 5%; height: 60%; float: right; margin-top: 0.75%;"></button>
-                <button onclick="myFunction();" id="logoButton" style="width: 2.5%; height: 60%; float: left; margin-top: 0.75%; margin-left: 0.75%;"></button>
+
+        <div class="rndmClr" style="height: 8%; text-align: center; background-color: #d3d3d3; border: #d3d3d3;">
+            <div style="margin-right: 0.75%; bgcolor: #334422;">
+
+
+                <button class="rndmClr" onclick="window.open('./');" style="width: 5%; height: 60%; float: right; margin-top: 0.75%; margin-left: 0.75%;">HTML</button>
+                <button class="rndmClr" style="width: 5%; height: 60%; float: right; margin-top: 0.75%; margin-left: 0.75%;">LaTeX</button>
+                <button class="rndmClr" onclick="myFunction();" style="width: 5%; height: 60%; float: right; margin-top: 0.75%;"></button>
+                <button class="rndmClr" onclick="myFunction();" id="logoButton" style="width: 2.5%; height: 60%; float: left; margin-top: 0.75%; margin-left: 0.75%;"></button>
 
                   
 
@@ -53,25 +60,34 @@
 
             </div>
         </div>
+        
         <div style="height: 32%; text-align: center;">
             <div style="margin-right: 0.75%;">
                 <marquee>Launching soon</marquee>
             </div>
             <div style="margin-right: 0.75%;" >
-                <marquee scrollamount="2"></marquee>
+                <marquee scrollamount="2">generates random color-scheme on every refresh</marquee>
             </div>
         </div>
-        <div id="clickme" class="border" style="height: 50%; text-align: center; background-color: #d3d3d3; border: #d3d3d3;">
+        <div class="rndmClr" id="clickme" class="border" style="height: 50%; text-align: center; background-color: #d3d3d3; border: #d3d3d3;">
             <div style="margin-right: 0.75%;">
             </div>
         </div>
 
+
+        <script>
+            collection = document.getElementsByClassName("rndmClr");
+            
+            for (i=0; i<collection.length; i++) {
+            collection[i].style.backgroundColor = Math.floor(Math.random()*16777215).toString(16);
+            collection[i].style.color = Math.floor(Math.random()*16777215).toString(16);
+            }
+        </script>
+
         <iframe id="myDIV" STYLE="display: none; position: absolute; top: 40px; left: 40px; WIDTH:800PX; height: 600PX;" src="./LaTex/sa2sanf.pdf">
-
-
-
-
+            
     </body>
+
 </html>
 
 
