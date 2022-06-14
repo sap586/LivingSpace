@@ -68,6 +68,19 @@
             <div style="margin-right: 0.75%;" >
                 <marquee scrollamount="2">Testing color combination</marquee>
             </div>
+            <div>
+                <marquee id="lastUpdate" behavior="scroll" direction="left" scrollamount="7">
+                    last updated Mon May 3 7:25 AM: 
+                </marquee>
+                <script>
+                    fetch("https://api.github.com/repos/contacttheteam/LivingSpace/commits")
+                        .then((res) => res.json())
+                        .then((data) => {
+                            document.getElementById('lastUpdate').innerHTML =  'last updated on ' + data[0].commit.author.date;
+                        });
+                        
+                </script>
+            </div>
         </div>
         <div class="rndmClr" id="clickme" class="border" style="height: 50%; text-align: center; background-color: #d3d3d3; border: #d3d3d3;">
             <div style="margin-right: 0.75%;">
