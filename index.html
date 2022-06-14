@@ -77,15 +77,38 @@
 
         <script>
             collection = document.getElementsByClassName("rndmClr");
-            
-            for (i=0; i<collection.length; i++) {
-            collection[i].style.backgroundColor = Math.floor(Math.random()*16777215).toString(16);
-            collection[i].style.color = Math.floor(Math.random()*16777215).toString(16);
+            var allowRndm = false;
+            if (allowRndm) {
+                for (i=0; i<collection.length; i++) {
+                    collection[i].style.backgroundColor = Math.floor(Math.random()*16777215).toString(16);
+                    collection[i].style.color = Math.floor(Math.random()*16777215).toString(16);
+                }
+            } else {
+                //33,39,59 = 21273B
+                //213,213,213 = D5D5D5
+                // alert(Math.floor(Math.random()*16777215).toString(16));
+                clr1 = '21273B';
+                clr2 = 'D5D5D5';
+                for (i=0; i<collection.length; i++) {
+                    if (i%2 == 0) {
+                        collection[i].style.backgroundColor = clr1;
+                        collection[i].style.color = clr2;
+                    } else {
+                        collection[i].style.backgroundColor = clr2;
+                        collection[i].style.color = clr1;
+                    }
+                    
+                }
             }
+            
+            
         </script>
 
         <iframe id="myDIV" STYLE="display: none; position: absolute; top: 40px; left: 40px; WIDTH:800PX; height: 600PX;" src="./LaTex/sa2sanf.pdf">
-            
+
+
+
+
     </body>
 
 </html>
