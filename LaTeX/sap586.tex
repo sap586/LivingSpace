@@ -1,0 +1,154 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper, total={6in, 8in}, margin=0.5in]{geometry}
+\usepackage{marvosym}
+\usepackage{fontspec}
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+%\begin{comment}
+%\end{comment}
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{stix}
+%\usepackage{twemojis}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[
+%SmallCapsFont = Fontin-SmallCaps.otf,
+%BoldFont = Fontin-Bold.otf,
+%ItalicFont = Fontin-Italic.otf
+%]
+%{Fontin.otf}
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+\hyphenation{im-pre-se}
+\usepackage[absolute]{textpos}
+\usepackage{amssymb}
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+\usepackage{fontspec}
+
+%----------
+\usepackage{worldflags}
+%----------
+
+\newcommand{\apple}{\char"F8FF}
+\usepackage{lipsum}
+\usepackage{setspace}
+
+
+
+\begin{document}
+\pagestyle{empty} 						% non-numbered pages
+\font\fb=''[cmr10]'' 						%for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par	{\centering
+	ॐ
+	{\setmainfont{Apple Chancery} \apple}																														\\
+	\href{https://sap586.github.io/LivingSpace/}{$ \Uparrow$}{sagarPanchal}																										\\
+	\small \href{mailto:sap586@nyu.edu}{sap586@nyu.edu}		\textbullet{+1 (607) 314-0114}		\textbullet {Endicott, NY - 13760}																		\\
+	\small \href{https://www.linkedin.com/in/sap586/}{https://www.linkedin.com/in/sap586/}		\textbullet \href{https://sap586.github.io/LivingSpace/}{https://sap586.github.io/LivingSpace/}		\par}
+	
+%Section: About--------------------------------------
+\section	{	About		}
+	\begin{tabular}{ll}
+		\textsc{	Computer \& Electrical Engineer,					}\\
+		\textsc{	looking forward towards a role that offers better Individual and Professional growth.	}
+	\\\end{tabular}
+
+
+
+%Section: Education--------------------------------------
+\section	{	Education		}
+	\begin{tabular}{rl}
+		\small{}\textsc{		Jan 2016-17	} 		& 		\textsc{	MS, Electrical \& Computer engineering, 		\small {(3.41/4)}			}	\\
+ 											& 		\textsc{	Polytechnic institute of technology, NYU							}	\\
+ 		\small{}\textsc{		Jun 2010-14	} 		& 		\textsc{	BE, Instrumentation \small{\&} Controls,		\small {(7.04/10)}		}	\\
+ 											& 		\textsc{	Svit, GTU													}	\\
+	\end{tabular}
+
+%Section: Technical Skills--------------------------------------
+\section{		Skills																													}
+	\begin{tabular}{rl}	\small{}
+	 	\small{}\textsc{		Computer Programming:	}	& \textsc{					java(primary), \small{c/c\texttt{++}/cs (secondary)}, git, \LaTeX (tertiary),	}	\\
+  												& \textsc{					web(html, css, js), desktop(javaFx, awt)	} 	\\
+ 		\small{}\textsc{		Automation:			}	& \textsc{					micro-controllers \& single board computers,						}	\\
+  												& \textsc{					PLCs(ladder-logic, FBD), hmi/scada								} 	\\
+ 		\small{}\textsc{		Industries served:		}	& \textsc{					machineries, manufacturing, control panels, solar energy,				}	\\
+  												& \textsc{					Education													} 	\\
+	\end{tabular}
+
+%Section: Work--------------------------------------
+\section	{	Work Experience																										}
+%
+\textsc	{		Software Engineer, Universal Instruments, ny																			} \hfill \emph {Sep 22 - present	}	\\
+		{	\textbullet	Provide software support to develop Fuzion - Precision Bonder platform 															}	\\
+		{	\textbullet	Cognex Quickbuild integration in Fuzion platform 															}	\\
+		{	\textbullet tech stack  : $\cdot$	CS $\cdot$ C $\cdot$ CPP $\cdot$ Git $\cdot$												}	\\
+
+\begin{spacing}{0.1}
+\end{spacing}
+%
+\textsc	{	 	Automation Engineer	, nor-cal controls, ca																					} \hfill \emph {Jan 22 - Jul 22	}	\\
+		{	$\circ$	Automation software for Solar Power-plants 																					}	\\
+		{	$\circ$	tech stack : $\cdot$ Ignition SCADA $\cdot$ GE PLC $\cdot$ SEL-RTAC $\cdot$ Red Lion $\cdot$													}	\\
+%
+\begin{spacing}{0.1}
+\end{spacing}
+\textsc	{		Software Engineer - Machine Automation, mini-circuits, ny																		} \hfill \emph {Feb 18 - Nov 21	}	\\
+		{	$\circ$ 	Provide software support for pick \& place Rotary machines development}	\\
+		{	$\circ$ 	Web development - Back \& Front-end: \href{https://www.minicircuits.com/}{https://www.minicircuits.com/}}	\\
+		{	$\circ$ 	Enterprise application software development}	\\
+		{	$\circ$	tech stack : $\cdot$ Java $\cdot$ JavaFX $\cdot$ HTML $\cdot$ CSS $\cdot$ Javascript $\cdot$													}	\\
+%
+\begin{spacing}{0.1}
+\end{spacing}
+\textsc	{	 	Developer Intern, revmax fleet optimization, ny																						} \hfill \emph {Sep - Dec 17	}	\\
+		{	$\circ$ 	Developed Firmware for SidewalkIQ Sensor using Doppler Radar to monitor sidewalk activities $\circ$													}	\\
+		{	$\circ$ 	Successfully deployed sensors at various NYC locations $\circ$																					}	\\
+		{	$\circ$ 	R\&D to improve data consistency and efficiency of data storage/transfer to Server for further processing $\circ$												}	\\
+		{	$\circ$	tech stack : $\cdot$ Arduino-C $\cdot$ 																										}	\\
+%
+\begin{spacing}{0.1}
+\end{spacing}
+\textsc	{		Instructor (ITEST Program), robotics \& mechatronics dpt., NYU																				} \hfill \emph {May - Aug 17	}	\\
+		{	$\circ$ 	Mentor to Robotics Club Programming Team for Robotics competitions (First Robotics \& Vex Robotics).												}	\\
+		{	$\circ$ 	Teaching concepts of Computer Programming to Robotics Club Team.																		}	\\
+%
+\begin{spacing}{0.1}
+\end{spacing}
+\textsc	{		Lead Instructor (CREST Program), center for k12 stem education, NYU																			} \hfill \emph {Feb 18 - Nov 21	}	\\
+		{	$\circ$ 	Training High School Interns with Computer Programming (Arduino C), IoT, Robotics \& 3D-Printing activities $\circ$											}	\\
+		{	$\circ$ 	\textsc{Autonomous Car (Mouse in a Maze)} - STM32 Board: \href{https://github.com/sap586/RTES_Project}{https://github.com/sap586/RTES\_Project} $\circ$			}	\\
+		{	$\circ$ 	\textsc{Wireless Robot Controller} - Arduino: \href{https://github.com/sap586/WirelessRobotDay5Activity}{https://github.com/sap586/WirelessRobotDay5Activity} $\circ$	}	\\
+%
+\begin{spacing}{0.1}
+\end{spacing}
+\textsc	{		Design Engineer, prima automation, IN																							} \hfill \emph {Jun 14 - Jan 16	}	\\
+		{	$\circ$ PLC $\circ$ SCADA $\circ$ Siemens $\circ$ Allen-Bradley $\circ$ Front-end (UX) $\circ$																	}	\\													
+		{	$\circ$ Electrical \& Control Panel Layout $\circ$ E-plan $\circ$ AutoCAD $\circ$																}	\\
+%
+\begin{spacing}{0.1}
+\end{spacing}
+ \textsc	{	Trainee Engineer, neoplast (I) pvt. ltd., IN																						} \hfill \emph {Aug 13 - May 14	}	\\
+ 		{	$\circ$ PLC $\circ$ SCADA $\circ$ Siemens $\circ$																					}	\\
+%
+
+
+\par	{\hfill
+	{where music meets software, checkout my new project : \href{https://sap586.github.io/beep/}{beepBox} (inspired from https://www.beepbox.co/)}																														\\
+		\par}
+		
+		
+\hrule
+\small 	{	\hfill {This document is prepared using \LaTeX. Click \href{https://raw.githubusercontent.com/sap586/Resume/0beda9d8c8c418c8b1bfaba2cc7f6a1682c933cc/sap586.tex}{here} to download the source code.}\\
+
+
+\end{document}
