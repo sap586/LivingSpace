@@ -31,7 +31,7 @@
               left: 0;
               width: 5px;
               height: 5px;
-              background: black;
+              background: green;
               border-radius: 50%;
             }
 
@@ -230,6 +230,8 @@
             }
 
             function bodyLoaded() {
+                alert("You are being redirected...");
+                window.location.href = "./snap-main/index.html";
             }
             
 
@@ -289,7 +291,7 @@
                         .then((data) => {
                             document.getElementById('lastUpdate').innerHTML =  'last updated on ' + data[0].commit.author.date;
                         });
-                        
+                    
                 </script>
             </div>
             <div style="margin-right: 0.75%;">
