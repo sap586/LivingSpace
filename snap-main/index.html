@@ -76,7 +76,7 @@
     </header> 
     <main class="main-content">
         
-      <section class="site-section-hero bg-image mb-5" style="background-image: url('https://live.staticflickr.com/65535/53343798869_08caf49b49_o.jpg');"  data-stellar-background-ratio="0.5" id="section-home">
+      <section class="site-section-hero bg-image mb-5" style="background-image: url('https://live.staticflickr.com/65535/53426726043_742eb5bbf3_o.jpg');"  data-stellar-background-ratio="0.5" id="section-home">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-7 text-center">
             <h1 class=" heading text-uppercase text-white" data-aos="fade-up">Sagar</h1>
@@ -295,7 +295,7 @@
 
                 <div data-aos="fade-up"  data-aos-delay="100">
                   <h2 class="">Hi I'm Sagar</h2>
-                  <p>I am an aspiring astist. I always enjoy travelling, photography, and some times sketching. This website is small place to display my work.</p>
+                  <p>I always enjoy travelling, photography, and some times sketching. This website is small place to display my work.</p>
                   <p>I believe that everyone has unique journeys of life. We should not try to be like others, but be ourselves and find out the true potential of who we are.</p>
                   <!--h3 class=" mt-5">Services</h3>
                   
@@ -556,13 +556,13 @@
                           var lname = document.getElementById("lname").value;
                           var email = document.getElementById("email").value;
                           var subject = document.getElementById("subject").value;
-                          var body = document.getElementById("message").value + ".";
+                          var body = fname + "; " + lname + "; " + email + "; " + subject + "; " +  document.getElementById("message").value + ";";
                           
                           Email.send({
                               SecureToken : "d5a3c20a-16cc-47f5-9700-8c4072c0d524",
                               To : 'smithanpanchal@gmail.com',
                               From : "sap586@nyu.edu",
-                              Subject : "This is the subject",
+                              Subject : subject,
                               Body : body
                           }).then(
                             message => alert(message)
