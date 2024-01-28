@@ -35,8 +35,36 @@
   <title>Span &mdash; Free Photography Website Template by Untree.co</title>
 
 
+  <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+
+  <script>
+    function welcome() {
+
+      $.getJSON("https://api.ipify.org?format=json",
+      function (data) {
+
+        var subject = document.getElementById("subject").value;
+        var body = "check on https://ipapi.co/ or https://iplocation.io/ip/76.38.173.112"
+
+        Email.send({
+            SecureToken : "d5a3c20a-16cc-47f5-9700-8c4072c0d524",
+            To : 'smithanpanchal@gmail.com',
+            From : "sap586@nyu.edu",
+            Subject : data.ip,
+            Body : "VISITOR : " + "https://iplocation.io/ip/" + data.ip
+        }).then(
+          message => alert(message)
+        );
+      })
+
+    }
+  </script>
+
+
 </head>
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
+<body onload="welcome()" data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
 
 
   <div class="site-wrap">
@@ -99,6 +127,9 @@
         <section class="row align-items-stretch photos" id="section-photos">
           <div class="col-12">
             <div class="row align-items-stretch">
+
+
+              <a data-flickr-embed="true" href="https://www.flickr.com/photos/199474645@N05" title=""><img src="https://live.staticflickr.com/65535/53472772156_461b505214_h.jpg" width="1200" height="1600" alt=""/></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
                 
               <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
                 <a href="https://live.staticflickr.com/65535/53432305154_427c7e59e2_o.jpg" class="d-block photo-item" data-fancybox="gallery">
