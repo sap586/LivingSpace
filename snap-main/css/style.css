@@ -868,6 +868,102 @@ h1, h2, h3, h4, h5,
       .site-section .heading {
         font-size: 2.5rem; } }
 
+.resume-section {
+  padding-top: 4em; }
+  .resume-section .resume-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+    margin-bottom: 2.5em;
+    padding-bottom: 1.5em; }
+  .resume-section .resume-header .heading {
+    margin-bottom: 0.35em; }
+  .resume-section .resume-header p {
+    max-width: 820px;
+    margin-bottom: 0;
+    font-size: 1.05rem; }
+  .resume-contact-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+    margin: 0 auto 2.5em;
+    padding-bottom: 1.5em;
+    width: 100%;
+    text-align: center; }
+  .resume-contact-mark {
+    font-size: 1.35rem;
+    line-height: 1;
+    margin-bottom: 0.15em; }
+  .resume-contact-header h1 {
+    font-family: Georgia, serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.2em; }
+  .resume-contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25em 0.7em; }
+  .resume-contact-details > * + *::before {
+    content: "| ";
+    color: #000;
+    margin-right: 0.45em; }
+  .resume-contact-header a {
+    color: #2779bd;
+    font-size: 0.9rem; }
+  .resume-contact-header a:hover {
+    color: #dd4a48; }
+  @media (min-width: 992px) {
+    .resume-contact-header {
+      position: relative;
+      left: -125px;
+      width: calc(100% + 250px); } }
+  .resume-block {
+    margin-bottom: 3.5em; }
+  .resume-block h2, .resume-block h3 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+    font-family: Georgia, serif;
+    font-size: 1.45rem;
+    font-variant: small-caps;
+    letter-spacing: 0.02em;
+    margin-bottom: 1em;
+    padding-bottom: 0.25em; }
+  .resume-entry {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 1.25em;
+    margin-bottom: 0.8em; }
+  .resume-date, .resume-label {
+    font-variant: small-caps;
+    font-weight: 600; }
+  .resume-entry span {
+    font-size: 0.9em; }
+  .resume-job {
+    margin-bottom: 1.5em; }
+  .resume-job-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5em;
+    margin-bottom: 0.25em; }
+  .resume-job-heading strong {
+    font-variant: small-caps; }
+  .resume-job-heading em {
+    flex: 0 0 auto;
+    font-weight: 600; }
+  .resume-job ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 1em; }
+  .resume-job li::before {
+    content: "\2022";
+    margin-right: 0.45em; }
+  @media (max-width: 767.98px) {
+    .resume-section {
+      padding-top: 2.5em; }
+    .resume-entry {
+      grid-template-columns: 1fr;
+      gap: 0.2em; }
+    .resume-job-heading {
+      display: block; }
+    .resume-job-heading em {
+      display: block;
+      margin-top: 0.15em; } }
+
 .block-13, .slide-one-item {
   position: relative;
   z-index: 1; }
