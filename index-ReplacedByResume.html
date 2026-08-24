@@ -1,0 +1,553 @@
+<!-- /*
+* Template Name: Span
+* Template Author: Untree.co
+* Tempalte URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  
+
+  <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600, 700,900|Oswald:400,700" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/fancybox.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>Span &mdash; Free Photography Website Template by Untree.co</title>
+
+
+  <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+
+  <script>
+    function welcome() {
+
+      $.getJSON("https://api.ipify.org?format=json",
+      function (data) {
+
+        var subject = document.getElementById("subject").value;
+        var body = "check on https://ipapi.co/ or https://iplocation.io/ip/76.38.173.112"
+
+        Email.send({
+            SecureToken : "d5a3c20a-16cc-47f5-9700-8c4072c0d524",
+            To : 'smithanpanchal@gmail.com',
+            From : "sap586@nyu.edu",
+            Subject : data.ip,
+            Body : "VISITOR : " + "https://iplocation.io/ip/" + data.ip
+        }).then(
+          message => alert(message)
+        );
+      })
+
+    }
+  </script>
+
+
+</head>
+<body onload="welcome()" data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
+
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="header-bar d-flex d-lg-block align-items-center site-navbar-target" data-aos="fade-right">
+      <div class="site-logo">
+        <img href="index.html" src="favicon.png" width="45" height="45">
+
+      </div>
+
+      <div class="d-inline-block d-lg-none ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle "><span class="icon-menu h3"></span></a></div>
+
+      <div class="main-menu">
+        <ul class="js-clone-nav">
+          <li><a href="#section-home" class="nav-link">Home</a></li>
+          <li><a href="#section-photos" class="nav-link">Photos</a></li>
+          <li><a href="#section-about" class="nav-link">About</a></li>
+          <li><a href="Resume.html" class="nav-link">Resume</a></li>
+          <!--li><a href="#section-testimonial" class="nav-link">Testimonial</a></li>
+          <li><a href="#section-blog" class="nav-link">Blog</a></li-->
+          <li><a href="#section-contact" class="nav-link">Contact</a></li>
+        </ul>
+        
+        <ul>
+            <li><a href="https://sap586.github.io/beep/">beep</a></li>
+        </ul>
+        
+        <ul class="social js-clone-nav">
+            <li><a href="https://www.instagram.com/sap586_/"><span class="icon-instagram"></span></a></li>
+            <li><a href="https://github.com/sap586"><span class="icon-github"></span></a></li>
+          <!--li><a href="#"><span class="icon-facebook"></span></a></li>
+          <li><a href="#"><span class="icon-twitter"></span></a></li>
+          <li><a href="#"><span class="icon-linkedin"></span></a></li-->
+        </ul>
+      </div>
+    </header> 
+    <main class="main-content">
+        
+      <section class="site-section-hero bg-image mb-5" style="background-image: url('https://live.staticflickr.com/65535/53426726043_742eb5bbf3_o.jpg');"  data-stellar-background-ratio="0.5" id="section-home">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-7 text-center">
+            <h1 class=" heading text-uppercase text-white" data-aos="fade-up">Sagar</h1>
+            <p class="lead text-white mb-4" data-aos="fade-up" data-aos-delay="100">Humanity is the greatest religion.</p>
+            <p data-aos="fade-up" data-aos-delay="100"><a href="#section-contact" class="btn btn-primary btn-md smoothscroll">Contact me</a></p>
+          </div>
+        </div>
+      </section>
+
+      <div class="container-fluid site-section">
+
+
+        <div class="row mb-3">
+          <div class="col-12 text-center">
+            <h2 class="heading">Photos</h2>
+          </div>
+        </div>
+
+        <section class="row align-items-stretch photos" id="section-photos">
+          <div class="col-12">
+            <div class="row align-items-stretch">
+
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53432305154_427c7e59e2_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53432305154_427c7e59e2_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53472772156_d3a0973a68_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53472772156_d3a0973a68_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53472772171_dd6ae836ef_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53472772171_dd6ae836ef_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53472914313_9ee03e3219_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53472914313_9ee03e3219_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53457228702_397d5e26c7_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53457228702_397d5e26c7_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53458564830_41ca6d44f7_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53458564830_41ca6d44f7_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53472772161_b12c0501d8_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53472772161_b12c0501d8_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+                <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                  <a href="https://live.staticflickr.com/65535/53431470844_d762397fff_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                    <img src="https://live.staticflickr.com/65535/53431470844_d762397fff_o.jpg" alt="Image" class="img-fluid mb-0">
+                    <div class="photo-text-more">
+                      <span class="icon icon-eye"></span>
+                    </div>
+                  </a>
+                </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53431467194_3cacb1cc60_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53431467194_3cacb1cc60_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://live.staticflickr.com/65535/53431459024_bc8c4f67ce_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53431459024_bc8c4f67ce_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53431285708_a7ed371daf_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53431285708_a7ed371daf_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53431134781_75c56dff35_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53431134781_75c56dff35_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://live.staticflickr.com/65535/53431128181_bf6c88ec9e_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53431128181_bf6c88ec9e_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53431124991_21194f857b_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53431124991_21194f857b_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53428825296_b47a294115_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53428825296_b47a294115_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://live.staticflickr.com/65535/53428973703_9d97ba2a35_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53428973703_9d97ba2a35_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53425644327_545d836b69_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53425644327_545d836b69_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53426570501_468d9ca2dd_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53426570501_468d9ca2dd_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://live.staticflickr.com/65535/53426726043_742eb5bbf3_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53426726043_742eb5bbf3_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53424969830_c6164ea87c_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53424969830_c6164ea87c_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53375144243_656bf1e3d9_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53375144243_656bf1e3d9_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://live.staticflickr.com/65535/53375401085_85e40fdb97_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53375401085_85e40fdb97_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53365437780_f66978b887_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53365437780_f66978b887_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53344951261_f76c6ce7e0_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53344951261_f76c6ce7e0_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://live.staticflickr.com/65535/53345179878_c23e517e7c_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53345179878_c23e517e7c_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53345339955_e2630d4e35_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53345339955_e2630d4e35_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53343934530_6bdf979b82_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53343934530_6bdf979b82_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://live.staticflickr.com/65535/53343798869_08caf49b49_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53343798869_08caf49b49_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+
+
+
+            </div>
+
+          </div>
+        </section> <!-- #section-photos -->
+
+        <section class="site-section" id="section-about">
+          <div class="container">
+            <div class="row justify-content-center">
+
+              <div class="col-md-8">
+
+                <!-- <h2 class="heading">About</h2> -->
+
+                <img src="images/DSC02268.JPG" alt="Image" class="img-fluid mb-4 w-50 rounded-circle">
+
+                <div data-aos="fade-up"  data-aos-delay="100">
+                  <h2 class="">Sagar</h2>
+				  <p>
+					  Have a look at some of my photography.
+					</p>
+                  <p>I believe that everyone has unique journeys of life. We should not try to be like others, but be ourselves and find out the true nature of <span id="typed"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="site-section" id="section-contact">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <h2 class=" mb-5 heading">Contact</h2>
+                
+                <script src="https://smtpjs.com/v3/smtp.js">
+                </script>
+				
+				<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+				<script>
+				  var typed = new Typed('#typed', {
+					strings: [
+					  'who we are ?',
+					  'where are we going ?',
+					  'where do we originate from ?',
+					  'why we are here on this planet ?',
+					  'what purpose do we have to serve on this planet ?',
+					  'why do we do what do we do ?'
+					],
+					typeSpeed: 60,
+					backSpeed: 40,
+					backDelay: 1200,
+					loop: true
+				  });
+				  </script>
+				
+                <script>
+                    
+                    var btn = document.getElementById('btn');
+                    
+                    btn.addEventListener('click', function(e) {
+                        alert("hi");
+                    })
+                    
+                    function sendEmail() {
+                        alert("sendingEmail...");
+                    }
+                    /*
+                    Email.send({
+                        Host : "smtp.elasticemail.com",
+                        Username : "username",
+                        Password : "password",
+                        To : 'them@website.com',
+                        From : "you@isp.com",
+                        Subject : "This is the subject",
+                        Body : "And this is the body"
+                    }).then(
+                      message => alert(message)
+                    );*/
+                </script>
+
+                
+                <form action="#">
+
+                  <div class="row form-group">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                      <label class="" for="fname">First Name</label>
+                      <input type="text" id="fname" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="" for="lname">Last Name</label>
+                      <input type="text" id="lname" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+
+                    <div class="col-md-12">
+                      <label class="" for="email">Email</label> 
+                      <input type="email" id="email" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+
+                    <div class="col-md-12">
+                      <label class="" for="subject">Subject</label> 
+                      <input type="subject" id="subject" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="row form-group mb-5">
+                    <div class="col-md-12">
+                      <label class="" for="message">Message</label> 
+                      <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-md-12">
+                        <input id='btn' value="Send Message" class="btn btn-primary btn-md">
+                        <!--input onclick="sendEmail()" type="submit" value="Send Message" class="btn btn-primary btn-md"-->
+                    </div>
+                  </div>
+                  
+                  <script>
+                      
+                      var btn = document.getElementById('btn');
+                      
+                      btn.addEventListener('click', function(e) {
+                          e.preventDefault();
+                          var subject = "subject";
+                          var message = "message";
+                          var fname = document.getElementById("fname").value;
+                          var lname = document.getElementById("lname").value;
+                          var email = document.getElementById("email").value;
+                          var subject = document.getElementById("subject").value;
+                          var body = fname + "; " + lname + "; " + email + "; " + subject + "; " +  document.getElementById("message").value + ";";
+                          
+                          Email.send({
+                              SecureToken : "d5a3c20a-16cc-47f5-9700-8c4072c0d524",
+                              To : 'smithanpanchal@gmail.com',
+                              From : "sap586@nyu.edu",
+                              Subject : subject,
+                              Body : body
+                          }).then(
+                            message => alert(message)
+                          );
+                      })
+                  </script>
+
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="row justify-content-center">
+          <!--div class="col-md-12 text-center py-5">
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a><!-- License information: https://untree.co/license/ >
+            </p>
+          </div-->
+        </div>
+      </div>
+    </main>
+
+  </div> <!-- .site-wrap -->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/lozad.min.js"></script>
+  
+
+  <script src="js/jquery.fancybox.min.js"></script>
+
+  <script src="js/main.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  </body>
+</html>
