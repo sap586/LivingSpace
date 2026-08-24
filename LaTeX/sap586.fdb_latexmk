@@ -1,0 +1,24 @@
+# Fdb version 4
+["pdflatex"] 1787308033.89491 "/Users/Sagar/Software/GIT/LivingSpace/LaTeX/sap586.tex" "sap586.pdf" "sap586" 1787308034.12145 2
+  "/Users/Sagar/Software/GIT/LivingSpace/LaTeX/sap586.tex" 1787103915.95321 7579 7019e7ac83c61663aaa9f537b2db928c ""
+  "/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty" 1644112042 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
+  "/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty" 1572645307 1057 525c2192b5febbd8c1f662c9468335bb ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls" 1705352648 20144 147463a6a579f4597269ef9565205cfe ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/base/size10.clo" 1705352648 8448 dbc0dbf4156c0bb9ba01a1c685d3bad0 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec.sty" 1707868014 3484 ff877041166391bc5ca8a1e45614784e ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty" 1654720880 2671 7e67d78d9b88c845599a85b2d41f2e39 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1708463273 30006 3d512c0edd558928ddea1690180ef77e ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty" 1708463273 6565 10e89ed128ccd59431746bbdd82129fc ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty" 1708376303 9327 11bedad2ac38f92e405a38ed18489a03 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/marvosym/marvosym.sty" 1333989323 9393 ceaf2ea8eb2c81fdb168323fc5fffc89 ""
+  "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
+  "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1730785912 8221427 66ba4e2aa43489359ddcb1d206b7b2f6 ""
+  "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
+  "sap586.aux" 1787308033.89447 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "sap586.tex" 1787103915.95321 7579 7019e7ac83c61663aaa9f537b2db928c ""
+  (generated)
+  "sap586.aux"
+  "sap586.log"
+  "sap586.pdf"
+  (rewritten before read)

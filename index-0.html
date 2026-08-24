@@ -1,0 +1,391 @@
+<html>
+
+    <head>
+
+        <style>
+            
+            .center {
+              margin: auto;
+              width: 60%;
+              border: 3px solid #73AD21;
+              padding: 10px;
+            }
+            
+            
+            .border{
+                border:silver; border-width:1px; border-style:solid;
+            }
+            
+            .dot {
+              position: relative;
+              top: 0;
+              left: 0;
+              width: 5px;
+              height: 5px;
+              background: red;
+              border-radius: 50%;
+            }
+            .dot2 {
+              position: relative;
+              top: 0;
+              left: 0;
+              width: 5px;
+              height: 5px;
+              background: green;
+              border-radius: 50%;
+            }
+
+            .sun {
+              width: 200px;
+              height: 200px;
+              position: absolute;
+              -webkit-animation-iteration-count: infinite;
+              -webkit-animation-timing-function: linear;
+              -webkit-animation-name: orbit;
+              -webkit-animation-duration: 5s;
+              -moz-animation-iteration-count: infinite;
+              -moz-animation-timing-function: linear;
+              -moz-animation-name: orbit;
+              -moz-animation-duration: 5s;
+              top: 50px;
+              left: 50px;
+            }
+            .moon {
+              width: 130px;
+              height: 130px;
+              position: absolute;
+              -webkit-animation-iteration-count: infinite;
+              -webkit-animation-timing-function: linear;
+              -webkit-animation-name: orbit;
+              -webkit-animation-duration: 5s;
+              -moz-animation-iteration-count: infinite;
+              -moz-animation-timing-function: linear;
+              -moz-animation-name: orbit;
+              -moz-animation-duration: 5s;
+              top: 85px;
+              left: 85px;
+            }
+            .me {
+              width: 140px;
+              height: 140px;
+              position: absolute;
+              -webkit-animation-iteration-count: infinite;
+              -webkit-animation-timing-function: linear;
+              -webkit-animation-name: orbit;
+              -webkit-animation-duration: 5s;
+              -moz-animation-iteration-count: infinite;
+              -moz-animation-timing-function: linear;
+              -moz-animation-name: orbit;
+              -moz-animation-duration: 5s;
+              top: 80px;
+              left: 80px;
+            }
+            .ve {
+              width: 150px;
+              height: 150px;
+              position: absolute;
+              -webkit-animation-iteration-count: infinite;
+              -webkit-animation-timing-function: linear;
+              -webkit-animation-name: orbit;
+              -webkit-animation-duration: 5s;
+              -moz-animation-iteration-count: infinite;
+              -moz-animation-timing-function: linear;
+              -moz-animation-name: orbit;
+              -moz-animation-duration: 5s;
+              top: 75px;
+              left: 75px;
+            }
+            .ma {
+              width: 160px;
+              height: 160px;
+              position: absolute;
+              -webkit-animation-iteration-count: infinite;
+              -webkit-animation-timing-function: linear;
+              -webkit-animation-name: orbit;
+              -webkit-animation-duration: 5s;
+              -moz-animation-iteration-count: infinite;
+              -moz-animation-timing-function: linear;
+              -moz-animation-name: orbit;
+              -moz-animation-duration: 5s;
+              top: 70px;
+              left: 70px;
+            }
+            .ju {
+              width: 170px;
+              height: 170px;
+              position: absolute;
+              -webkit-animation-iteration-count: infinite;
+              -webkit-animation-timing-function: linear;
+              -webkit-animation-name: orbit;
+              -webkit-animation-duration: 5s;
+              -moz-animation-iteration-count: infinite;
+              -moz-animation-timing-function: linear;
+              -moz-animation-name: orbit;
+              -moz-animation-duration: 5s;
+              top: 65px;
+              left: 65px;
+            }
+            .sa {
+              width: 180px;
+              height: 180px;
+              position: absolute;
+              -webkit-animation-iteration-count: infinite;
+              -webkit-animation-timing-function: linear;
+              -webkit-animation-name: orbit;
+              -webkit-animation-duration: 5s;
+              -moz-animation-iteration-count: infinite;
+              -moz-animation-timing-function: linear;
+              -moz-animation-name: orbit;
+              -moz-animation-duration: 5s;
+              top: 60px;
+              left: 60px;
+            }
+            .ra {
+              width: 190px;
+              height: 190px;
+              position: absolute;
+              -webkit-animation-iteration-count: infinite;
+              -webkit-animation-timing-function: linear;
+              -webkit-animation-name: orbit2;
+              -webkit-animation-duration: 5s;
+              -moz-animation-iteration-count: infinite;
+              -moz-animation-timing-function: linear;
+              -moz-animation-name: orbit2;
+              -moz-animation-duration: 5s;
+              top: 55px;
+              left: 55px;
+            }
+            .ke {
+              width: 210px;
+              height: 210px;
+              position: absolute;
+              -webkit-animation-iteration-count: infinite;
+              -webkit-animation-timing-function: linear;
+              -webkit-animation-name: orbit2;
+              -webkit-animation-duration: 5s;
+              -moz-animation-iteration-count: infinite;
+              -moz-animation-timing-function: linear;
+              -moz-animation-name: orbit2;
+              -moz-animation-duration: 5s;
+              top: 45px;
+              left: 45px;
+            }
+
+            @-webkit-keyframes orbit {
+              from {
+                -webkit-transform: rotate(0deg)
+              }
+
+              to {
+                -webkit-transform: rotate(360deg)
+              }
+            }
+
+            @-moz-keyframes orbit {
+              from {
+                -moz-transform: rotate(0deg)
+              }
+
+              to {
+                -moz-transform: rotate(360deg)
+              }
+            }
+
+            @-webkit-keyframes orbit2 {
+              from {
+                -webkit-transform: rotate(360deg)
+              }
+
+              to {
+                -webkit-transform: rotate(0deg)
+              }
+            }
+
+            @-moz-keyframes orbit2 {
+              from {
+                -moz-transform: rotate(360deg)
+              }
+
+              to {
+                -moz-transform: rotate(0deg)
+              }
+            }
+
+            
+        </style>
+
+        <script>
+//            alert(document.head);
+            function getWidthHeight(t) {
+                alert(t.clientWidth + " x " + t.clientHeight);
+            }
+
+            function myFunction() {
+                var x = document.getElementById("myDIV");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+
+            function bodyLoaded() {
+                alert("You are being redirected...");
+                window.location.href = "./snap-main/index.html";
+            }
+            
+
+        </script>
+
+    </head>
+
+    <body class="rndmClr" onload="bodyLoaded()">
+        
+        <script>
+
+//            alert(document.body);
+            var style = window.getComputedStyle(document.body);
+            document.body.style.marginTop       = "0px";
+            document.body.style.marginBottom    = "0px";
+            document.body.style.marginLeft      = "0px";
+            document.body.style.marginRight     = "0px";
+//            alert("Current marginTop: " + style.marginTop + "; " + style.marginBottom + "; " + style.marginLeft + "; " + style.marginRight + "; ");
+
+
+        </script>
+
+        <div class="rndmClr" style="height: 8%; text-align: center; background-color: #d3d3d3; border: #d3d3d3;">
+            <div style="margin-right: 0.75%; bgcolor: #334422;">
+
+
+                <button class="rndmClr" onclick="window.open('./snap-main/index.html');" style="width: 5%; height: 60%; float: right; margin-top: 0.75%; margin-left: 0.75%;">HTML</button>
+                <button class="rndmClr" onclick="myFunction();" style="width: 5%; height: 60%; float: right; margin-top: 0.75%; margin-left: 0.75%;">LaTeX</button>
+                <button class="rndmClr" onclick="myFunction();" style="width: 5%; height: 60%; float: right; margin-top: 0.75%;">Resume</button>
+                <button class="rndmClr" onclick="myFunction();" id="logoButton" style="width: 2.5%; height: 60%; float: left; margin-top: 0.75%; margin-left: 0.75%;">X</button>
+
+                  
+
+
+
+
+            </div>
+        </div>
+        
+        <div style="height: 32%; text-align: center;">
+            <div style="margin-right: 0.75%;">
+                <marquee>.</marquee>
+            </div>
+            <div style="margin-right: 0.75%;" >
+                <marquee scrollamount="2">Growth is beyond comfort zone</marquee>
+            </div>
+            <div style="margin-right: 0.75%;" >
+                <marquee scrollamount="3">Every day is a new possibility</marquee>
+            </div>
+            <div>
+                <marquee id="lastUpdate" behavior="scroll" direction="left" scrollamount="7">
+                    last updated Sat Dec 23 11:26 AM
+                </marquee>
+                <script>
+                    fetch("https://api.github.com/repos/contacttheteam/LivingSpace/commits")
+                        .then((res) => res.json())
+                        .then((data) => {
+                            document.getElementById('lastUpdate').innerHTML =  'last updated on ' + data[0].commit.author.date;
+                        });
+                    
+                </script>
+            </div>
+            <div style="margin-right: 0.75%;">
+                <marquee width="20%" scrollamount="3">Follow your ♥
+                </marquee>
+            </div>
+        </div>
+        <div class="rndmClr" id="clickme" class="border" style="height: 50%; text-align: center; background-color: #d3d3d3; border: #d3d3d3;">
+            <div style="margin-right: 0.75%;">
+            </div>
+        </div>
+        
+        
+        <div class="center">
+        <div class="sun">
+         <div class="dot"></div>
+        </div>
+        <div class="moon">
+         <div class="dot"></div>
+        </div>
+        <div class="me">
+         <div class="dot"></div>
+        </div>
+        <div class="ve">
+         <div class="dot"></div>
+        </div>
+        <div class="ma">
+         <div class="dot"></div>
+        </div>
+        <div class="ju">
+         <div class="dot"></div>
+        </div>
+        <div class="sa">
+         <div class="dot"></div>
+        </div>
+        <div class="ra">
+         <div class="dot2"></div>
+        </div>
+        <div class="ke">
+         <div class="dot2"></div>
+        </div>
+        </div>
+
+
+        <script>
+            collection = document.getElementsByClassName("rndmClr");
+            var allowRndm = false;
+            if (allowRndm) {
+                for (i=0; i<collection.length; i++) {
+                    collection[i].style.backgroundColor = Math.floor(Math.random()*16777215).toString(16);
+                    collection[i].style.color = Math.floor(Math.random()*16777215).toString(16);
+                }
+            } else {
+                //33,39,59 = 21273B
+                //213,213,213 = D5D5D5
+                // alert(Math.floor(Math.random()*16777215).toString(16));
+                clr1 = '21273B';
+                clr2 = 'D5D5D5';
+                for (i=0; i<collection.length; i++) {
+                    if (i%2 == 0) {
+                        collection[i].style.backgroundColor = clr1;
+                        collection[i].style.color = clr2;
+                    } else {
+                        collection[i].style.backgroundColor = clr2;
+                        collection[i].style.color = clr1;
+                    }
+                    
+                }
+            }
+            
+            
+        </script>
+
+    <!--iframe id="myDIV" STYLE="display: none; position: absolute; top: 40px; left: 40px; WIDTH:800PX; height: 600PX;" src="./LaTex/sap586.pdf"-->
+    <iframe id="myDIV" STYLE="display: none; position: absolute; top: 40px; left: 40px; WIDTH:800PX; height: 600PX;" src="https://github.com/sap586/LivingSpace/blob/master/LaTeX/sap586.pdf">
+
+        <iframe
+            src="https://drive.google.com/embeddedfolderview?id=1M5Ex7GlPL2Yyw6q8o0u25qo4q4KwXj9U#grid"
+            width="700px"
+            height="350px">
+            
+            
+        </iframe>
+
+
+
+    </body>
+
+</html>
+
+
+
+
+
+
+
+

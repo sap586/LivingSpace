@@ -1,391 +1,553 @@
-<html>
+<!-- /*
+* Template Name: Span
+* Template Author: Untree.co
+* Tempalte URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="favicon.png">
 
-    <head>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  
 
-        <style>
-            
-            .center {
-              margin: auto;
-              width: 60%;
-              border: 3px solid #73AD21;
-              padding: 10px;
-            }
-            
-            
-            .border{
-                border:silver; border-width:1px; border-style:solid;
-            }
-            
-            .dot {
-              position: relative;
-              top: 0;
-              left: 0;
-              width: 5px;
-              height: 5px;
-              background: red;
-              border-radius: 50%;
-            }
-            .dot2 {
-              position: relative;
-              top: 0;
-              left: 0;
-              width: 5px;
-              height: 5px;
-              background: green;
-              border-radius: 50%;
-            }
-
-            .sun {
-              width: 200px;
-              height: 200px;
-              position: absolute;
-              -webkit-animation-iteration-count: infinite;
-              -webkit-animation-timing-function: linear;
-              -webkit-animation-name: orbit;
-              -webkit-animation-duration: 5s;
-              -moz-animation-iteration-count: infinite;
-              -moz-animation-timing-function: linear;
-              -moz-animation-name: orbit;
-              -moz-animation-duration: 5s;
-              top: 50px;
-              left: 50px;
-            }
-            .moon {
-              width: 130px;
-              height: 130px;
-              position: absolute;
-              -webkit-animation-iteration-count: infinite;
-              -webkit-animation-timing-function: linear;
-              -webkit-animation-name: orbit;
-              -webkit-animation-duration: 5s;
-              -moz-animation-iteration-count: infinite;
-              -moz-animation-timing-function: linear;
-              -moz-animation-name: orbit;
-              -moz-animation-duration: 5s;
-              top: 85px;
-              left: 85px;
-            }
-            .me {
-              width: 140px;
-              height: 140px;
-              position: absolute;
-              -webkit-animation-iteration-count: infinite;
-              -webkit-animation-timing-function: linear;
-              -webkit-animation-name: orbit;
-              -webkit-animation-duration: 5s;
-              -moz-animation-iteration-count: infinite;
-              -moz-animation-timing-function: linear;
-              -moz-animation-name: orbit;
-              -moz-animation-duration: 5s;
-              top: 80px;
-              left: 80px;
-            }
-            .ve {
-              width: 150px;
-              height: 150px;
-              position: absolute;
-              -webkit-animation-iteration-count: infinite;
-              -webkit-animation-timing-function: linear;
-              -webkit-animation-name: orbit;
-              -webkit-animation-duration: 5s;
-              -moz-animation-iteration-count: infinite;
-              -moz-animation-timing-function: linear;
-              -moz-animation-name: orbit;
-              -moz-animation-duration: 5s;
-              top: 75px;
-              left: 75px;
-            }
-            .ma {
-              width: 160px;
-              height: 160px;
-              position: absolute;
-              -webkit-animation-iteration-count: infinite;
-              -webkit-animation-timing-function: linear;
-              -webkit-animation-name: orbit;
-              -webkit-animation-duration: 5s;
-              -moz-animation-iteration-count: infinite;
-              -moz-animation-timing-function: linear;
-              -moz-animation-name: orbit;
-              -moz-animation-duration: 5s;
-              top: 70px;
-              left: 70px;
-            }
-            .ju {
-              width: 170px;
-              height: 170px;
-              position: absolute;
-              -webkit-animation-iteration-count: infinite;
-              -webkit-animation-timing-function: linear;
-              -webkit-animation-name: orbit;
-              -webkit-animation-duration: 5s;
-              -moz-animation-iteration-count: infinite;
-              -moz-animation-timing-function: linear;
-              -moz-animation-name: orbit;
-              -moz-animation-duration: 5s;
-              top: 65px;
-              left: 65px;
-            }
-            .sa {
-              width: 180px;
-              height: 180px;
-              position: absolute;
-              -webkit-animation-iteration-count: infinite;
-              -webkit-animation-timing-function: linear;
-              -webkit-animation-name: orbit;
-              -webkit-animation-duration: 5s;
-              -moz-animation-iteration-count: infinite;
-              -moz-animation-timing-function: linear;
-              -moz-animation-name: orbit;
-              -moz-animation-duration: 5s;
-              top: 60px;
-              left: 60px;
-            }
-            .ra {
-              width: 190px;
-              height: 190px;
-              position: absolute;
-              -webkit-animation-iteration-count: infinite;
-              -webkit-animation-timing-function: linear;
-              -webkit-animation-name: orbit2;
-              -webkit-animation-duration: 5s;
-              -moz-animation-iteration-count: infinite;
-              -moz-animation-timing-function: linear;
-              -moz-animation-name: orbit2;
-              -moz-animation-duration: 5s;
-              top: 55px;
-              left: 55px;
-            }
-            .ke {
-              width: 210px;
-              height: 210px;
-              position: absolute;
-              -webkit-animation-iteration-count: infinite;
-              -webkit-animation-timing-function: linear;
-              -webkit-animation-name: orbit2;
-              -webkit-animation-duration: 5s;
-              -moz-animation-iteration-count: infinite;
-              -moz-animation-timing-function: linear;
-              -moz-animation-name: orbit2;
-              -moz-animation-duration: 5s;
-              top: 45px;
-              left: 45px;
-            }
-
-            @-webkit-keyframes orbit {
-              from {
-                -webkit-transform: rotate(0deg)
-              }
-
-              to {
-                -webkit-transform: rotate(360deg)
-              }
-            }
-
-            @-moz-keyframes orbit {
-              from {
-                -moz-transform: rotate(0deg)
-              }
-
-              to {
-                -moz-transform: rotate(360deg)
-              }
-            }
-
-            @-webkit-keyframes orbit2 {
-              from {
-                -webkit-transform: rotate(360deg)
-              }
-
-              to {
-                -webkit-transform: rotate(0deg)
-              }
-            }
-
-            @-moz-keyframes orbit2 {
-              from {
-                -moz-transform: rotate(360deg)
-              }
-
-              to {
-                -moz-transform: rotate(0deg)
-              }
-            }
-
-            
-        </style>
-
-        <script>
-//            alert(document.head);
-            function getWidthHeight(t) {
-                alert(t.clientWidth + " x " + t.clientHeight);
-            }
-
-            function myFunction() {
-                var x = document.getElementById("myDIV");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            }
-
-            function bodyLoaded() {
-                alert("You are being redirected...");
-                window.location.href = "./snap-main/index.html";
-            }
-            
-
-        </script>
-
-    </head>
-
-    <body class="rndmClr" onload="bodyLoaded()">
-        
-        <script>
-
-//            alert(document.body);
-            var style = window.getComputedStyle(document.body);
-            document.body.style.marginTop       = "0px";
-            document.body.style.marginBottom    = "0px";
-            document.body.style.marginLeft      = "0px";
-            document.body.style.marginRight     = "0px";
-//            alert("Current marginTop: " + style.marginTop + "; " + style.marginBottom + "; " + style.marginLeft + "; " + style.marginRight + "; ");
+  <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600, 700,900|Oswald:400,700" rel="stylesheet">
 
 
-        </script>
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-        <div class="rndmClr" style="height: 8%; text-align: center; background-color: #d3d3d3; border: #d3d3d3;">
-            <div style="margin-right: 0.75%; bgcolor: #334422;">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/fancybox.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>Span &mdash; Free Photography Website Template by Untree.co</title>
 
 
-                <button class="rndmClr" onclick="window.open('./snap-main/index.html');" style="width: 5%; height: 60%; float: right; margin-top: 0.75%; margin-left: 0.75%;">HTML</button>
-                <button class="rndmClr" onclick="myFunction();" style="width: 5%; height: 60%; float: right; margin-top: 0.75%; margin-left: 0.75%;">LaTeX</button>
-                <button class="rndmClr" onclick="myFunction();" style="width: 5%; height: 60%; float: right; margin-top: 0.75%;">Resume</button>
-                <button class="rndmClr" onclick="myFunction();" id="logoButton" style="width: 2.5%; height: 60%; float: left; margin-top: 0.75%; margin-left: 0.75%;">X</button>
+  <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
 
-                  
+  <script>
+    function welcome() {
+
+      $.getJSON("https://api.ipify.org?format=json",
+      function (data) {
+
+        var subject = document.getElementById("subject").value;
+        var body = "check on https://ipapi.co/ or https://iplocation.io/ip/76.38.173.112"
+
+        Email.send({
+            SecureToken : "d5a3c20a-16cc-47f5-9700-8c4072c0d524",
+            To : 'smithanpanchal@gmail.com',
+            From : "sap586@nyu.edu",
+            Subject : data.ip,
+            Body : "VISITOR : " + "https://iplocation.io/ip/" + data.ip
+        }).then(
+          message => alert(message)
+        );
+      })
+
+    }
+  </script>
 
 
+</head>
+<body onload="welcome()" data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
 
 
-            </div>
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
         </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="header-bar d-flex d-lg-block align-items-center site-navbar-target" data-aos="fade-right">
+      <div class="site-logo">
+        <img href="index.html" src="favicon.png" width="45" height="45">
+
+      </div>
+
+      <div class="d-inline-block d-lg-none ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle "><span class="icon-menu h3"></span></a></div>
+
+      <div class="main-menu">
+        <ul class="js-clone-nav">
+          <li><a href="#section-home" class="nav-link">Home</a></li>
+          <li><a href="#section-photos" class="nav-link">Photos</a></li>
+          <li><a href="#section-about" class="nav-link">About</a></li>
+          <li><a href="Resume.html" class="nav-link">Resume</a></li>
+          <!--li><a href="#section-testimonial" class="nav-link">Testimonial</a></li>
+          <li><a href="#section-blog" class="nav-link">Blog</a></li-->
+          <li><a href="#section-contact" class="nav-link">Contact</a></li>
+        </ul>
         
-        <div style="height: 32%; text-align: center;">
-            <div style="margin-right: 0.75%;">
-                <marquee>.</marquee>
+        <ul>
+            <li><a href="https://sap586.github.io/beep/">beep</a></li>
+        </ul>
+        
+        <ul class="social js-clone-nav">
+            <li><a href="https://www.instagram.com/sap586_/"><span class="icon-instagram"></span></a></li>
+            <li><a href="https://github.com/sap586"><span class="icon-github"></span></a></li>
+          <!--li><a href="#"><span class="icon-facebook"></span></a></li>
+          <li><a href="#"><span class="icon-twitter"></span></a></li>
+          <li><a href="#"><span class="icon-linkedin"></span></a></li-->
+        </ul>
+      </div>
+    </header> 
+    <main class="main-content">
+        
+      <section class="site-section-hero bg-image mb-5" style="background-image: url('https://live.staticflickr.com/65535/53426726043_742eb5bbf3_o.jpg');"  data-stellar-background-ratio="0.5" id="section-home">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-7 text-center">
+            <h1 class=" heading text-uppercase text-white" data-aos="fade-up">Sagar</h1>
+            <p class="lead text-white mb-4" data-aos="fade-up" data-aos-delay="100">Humanity is the greatest religion.</p>
+            <p data-aos="fade-up" data-aos-delay="100"><a href="#section-contact" class="btn btn-primary btn-md smoothscroll">Contact me</a></p>
+          </div>
+        </div>
+      </section>
+
+      <div class="container-fluid site-section">
+
+
+        <div class="row mb-3">
+          <div class="col-12 text-center">
+            <h2 class="heading">Photos</h2>
+          </div>
+        </div>
+
+        <section class="row align-items-stretch photos" id="section-photos">
+          <div class="col-12">
+            <div class="row align-items-stretch">
+
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53432305154_427c7e59e2_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53432305154_427c7e59e2_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53472772156_d3a0973a68_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53472772156_d3a0973a68_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53472772171_dd6ae836ef_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53472772171_dd6ae836ef_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53472914313_9ee03e3219_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53472914313_9ee03e3219_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53457228702_397d5e26c7_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53457228702_397d5e26c7_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53458564830_41ca6d44f7_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53458564830_41ca6d44f7_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53472772161_b12c0501d8_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53472772161_b12c0501d8_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+                <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                  <a href="https://live.staticflickr.com/65535/53431470844_d762397fff_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                    <img src="https://live.staticflickr.com/65535/53431470844_d762397fff_o.jpg" alt="Image" class="img-fluid mb-0">
+                    <div class="photo-text-more">
+                      <span class="icon icon-eye"></span>
+                    </div>
+                  </a>
+                </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53431467194_3cacb1cc60_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53431467194_3cacb1cc60_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://live.staticflickr.com/65535/53431459024_bc8c4f67ce_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53431459024_bc8c4f67ce_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53431285708_a7ed371daf_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53431285708_a7ed371daf_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53431134781_75c56dff35_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53431134781_75c56dff35_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://live.staticflickr.com/65535/53431128181_bf6c88ec9e_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53431128181_bf6c88ec9e_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53431124991_21194f857b_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53431124991_21194f857b_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53428825296_b47a294115_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53428825296_b47a294115_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://live.staticflickr.com/65535/53428973703_9d97ba2a35_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53428973703_9d97ba2a35_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53425644327_545d836b69_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53425644327_545d836b69_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53426570501_468d9ca2dd_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53426570501_468d9ca2dd_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://live.staticflickr.com/65535/53426726043_742eb5bbf3_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53426726043_742eb5bbf3_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53424969830_c6164ea87c_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53424969830_c6164ea87c_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53375144243_656bf1e3d9_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53375144243_656bf1e3d9_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://live.staticflickr.com/65535/53375401085_85e40fdb97_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53375401085_85e40fdb97_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://live.staticflickr.com/65535/53365437780_f66978b887_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53365437780_f66978b887_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53344951261_f76c6ce7e0_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53344951261_f76c6ce7e0_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://live.staticflickr.com/65535/53345179878_c23e517e7c_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53345179878_c23e517e7c_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53345339955_e2630d4e35_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53345339955_e2630d4e35_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://live.staticflickr.com/65535/53343934530_6bdf979b82_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53343934530_6bdf979b82_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://live.staticflickr.com/65535/53343798869_08caf49b49_o.jpg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="https://live.staticflickr.com/65535/53343798869_08caf49b49_o.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+
+
+
             </div>
-            <div style="margin-right: 0.75%;" >
-                <marquee scrollamount="2">Growth is beyond comfort zone</marquee>
+
+          </div>
+        </section> <!-- #section-photos -->
+
+        <section class="site-section" id="section-about">
+          <div class="container">
+            <div class="row justify-content-center">
+
+              <div class="col-md-8">
+
+                <!-- <h2 class="heading">About</h2> -->
+
+                <img src="images/DSC02268.JPG" alt="Image" class="img-fluid mb-4 w-50 rounded-circle">
+
+                <div data-aos="fade-up"  data-aos-delay="100">
+                  <h2 class="">Sagar</h2>
+				  <p>
+					  Have a look at some of my photography.
+					</p>
+                  <p>I believe that everyone has unique journeys of life. We should not try to be like others, but be ourselves and find out the true nature of <span id="typed"></span></p>
+                </div>
+              </div>
             </div>
-            <div style="margin-right: 0.75%;" >
-                <marquee scrollamount="3">Every day is a new possibility</marquee>
-            </div>
-            <div>
-                <marquee id="lastUpdate" behavior="scroll" direction="left" scrollamount="7">
-                    last updated Sat Dec 23 11:26 AM
-                </marquee>
-                <script>
-                    fetch("https://api.github.com/repos/contacttheteam/LivingSpace/commits")
-                        .then((res) => res.json())
-                        .then((data) => {
-                            document.getElementById('lastUpdate').innerHTML =  'last updated on ' + data[0].commit.author.date;
-                        });
-                    
+          </div>
+        </section>
+
+        <section class="site-section" id="section-contact">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <h2 class=" mb-5 heading">Contact</h2>
+                
+                <script src="https://smtpjs.com/v3/smtp.js">
                 </script>
-            </div>
-            <div style="margin-right: 0.75%;">
-                <marquee width="20%" scrollamount="3">Follow your ♥
-                </marquee>
-            </div>
-        </div>
-        <div class="rndmClr" id="clickme" class="border" style="height: 50%; text-align: center; background-color: #d3d3d3; border: #d3d3d3;">
-            <div style="margin-right: 0.75%;">
-            </div>
-        </div>
-        
-        
-        <div class="center">
-        <div class="sun">
-         <div class="dot"></div>
-        </div>
-        <div class="moon">
-         <div class="dot"></div>
-        </div>
-        <div class="me">
-         <div class="dot"></div>
-        </div>
-        <div class="ve">
-         <div class="dot"></div>
-        </div>
-        <div class="ma">
-         <div class="dot"></div>
-        </div>
-        <div class="ju">
-         <div class="dot"></div>
-        </div>
-        <div class="sa">
-         <div class="dot"></div>
-        </div>
-        <div class="ra">
-         <div class="dot2"></div>
-        </div>
-        <div class="ke">
-         <div class="dot2"></div>
-        </div>
-        </div>
-
-
-        <script>
-            collection = document.getElementsByClassName("rndmClr");
-            var allowRndm = false;
-            if (allowRndm) {
-                for (i=0; i<collection.length; i++) {
-                    collection[i].style.backgroundColor = Math.floor(Math.random()*16777215).toString(16);
-                    collection[i].style.color = Math.floor(Math.random()*16777215).toString(16);
-                }
-            } else {
-                //33,39,59 = 21273B
-                //213,213,213 = D5D5D5
-                // alert(Math.floor(Math.random()*16777215).toString(16));
-                clr1 = '21273B';
-                clr2 = 'D5D5D5';
-                for (i=0; i<collection.length; i++) {
-                    if (i%2 == 0) {
-                        collection[i].style.backgroundColor = clr1;
-                        collection[i].style.color = clr2;
-                    } else {
-                        collection[i].style.backgroundColor = clr2;
-                        collection[i].style.color = clr1;
-                    }
+				
+				<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+				<script>
+				  var typed = new Typed('#typed', {
+					strings: [
+					  'who we are ?',
+					  'where are we going ?',
+					  'where do we originate from ?',
+					  'why we are here on this planet ?',
+					  'what purpose do we have to serve on this planet ?',
+					  'why do we do what do we do ?'
+					],
+					typeSpeed: 60,
+					backSpeed: 40,
+					backDelay: 1200,
+					loop: true
+				  });
+				  </script>
+				
+                <script>
                     
-                }
-            }
-            
-            
-        </script>
+                    var btn = document.getElementById('btn');
+                    
+                    btn.addEventListener('click', function(e) {
+                        alert("hi");
+                    })
+                    
+                    function sendEmail() {
+                        alert("sendingEmail...");
+                    }
+                    /*
+                    Email.send({
+                        Host : "smtp.elasticemail.com",
+                        Username : "username",
+                        Password : "password",
+                        To : 'them@website.com',
+                        From : "you@isp.com",
+                        Subject : "This is the subject",
+                        Body : "And this is the body"
+                    }).then(
+                      message => alert(message)
+                    );*/
+                </script>
 
-    <!--iframe id="myDIV" STYLE="display: none; position: absolute; top: 40px; left: 40px; WIDTH:800PX; height: 600PX;" src="./LaTex/sap586.pdf"-->
-    <iframe id="myDIV" STYLE="display: none; position: absolute; top: 40px; left: 40px; WIDTH:800PX; height: 600PX;" src="https://github.com/sap586/LivingSpace/blob/master/LaTeX/sap586.pdf">
+                
+                <form action="#">
 
-        <iframe
-            src="https://drive.google.com/embeddedfolderview?id=1M5Ex7GlPL2Yyw6q8o0u25qo4q4KwXj9U#grid"
-            width="700px"
-            height="350px">
-            
-            
-        </iframe>
+                  <div class="row form-group">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                      <label class="" for="fname">First Name</label>
+                      <input type="text" id="fname" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="" for="lname">Last Name</label>
+                      <input type="text" id="lname" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+
+                    <div class="col-md-12">
+                      <label class="" for="email">Email</label> 
+                      <input type="email" id="email" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+
+                    <div class="col-md-12">
+                      <label class="" for="subject">Subject</label> 
+                      <input type="subject" id="subject" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="row form-group mb-5">
+                    <div class="col-md-12">
+                      <label class="" for="message">Message</label> 
+                      <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-md-12">
+                        <input id='btn' value="Send Message" class="btn btn-primary btn-md">
+                        <!--input onclick="sendEmail()" type="submit" value="Send Message" class="btn btn-primary btn-md"-->
+                    </div>
+                  </div>
+                  
+                  <script>
+                      
+                      var btn = document.getElementById('btn');
+                      
+                      btn.addEventListener('click', function(e) {
+                          e.preventDefault();
+                          var subject = "subject";
+                          var message = "message";
+                          var fname = document.getElementById("fname").value;
+                          var lname = document.getElementById("lname").value;
+                          var email = document.getElementById("email").value;
+                          var subject = document.getElementById("subject").value;
+                          var body = fname + "; " + lname + "; " + email + "; " + subject + "; " +  document.getElementById("message").value + ";";
+                          
+                          Email.send({
+                              SecureToken : "d5a3c20a-16cc-47f5-9700-8c4072c0d524",
+                              To : 'smithanpanchal@gmail.com',
+                              From : "sap586@nyu.edu",
+                              Subject : subject,
+                              Body : body
+                          }).then(
+                            message => alert(message)
+                          );
+                      })
+                  </script>
 
 
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
 
-    </body>
+        <div class="row justify-content-center">
+          <!--div class="col-md-12 text-center py-5">
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a><!-- License information: https://untree.co/license/ >
+            </p>
+          </div-->
+        </div>
+      </div>
+    </main>
 
+  </div> <!-- .site-wrap -->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/lozad.min.js"></script>
+  
+
+  <script src="js/jquery.fancybox.min.js"></script>
+
+  <script src="js/main.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  </body>
 </html>
-
-
-
-
-
-
-
-
