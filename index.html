@@ -12,6 +12,19 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Professional Resume | Sagar</title>
 </head>
+
+<script>
+  window.onload = function() {
+    const link = document.createElement('a');
+    link.href = "LaTeX/sap586.pdf";
+    link.download = "sap586.pdf";   // optional: forces download name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+</script>
+
+
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
   <div class="site-wrap">
     <div class="site-mobile-menu site-navbar-target">
@@ -55,35 +68,27 @@
                   <div class="resume-contact-details">
                     <a href="mailto:sap586@nyu.edu">sap586@nyu.edu</a>
                     <span>+1 (607) 314-0114</span>
-                    <span>Binghamton, NY (open to relocate)</span>
+                    <span>Binghamton, NY</span>
                   </div>
                   <a href="https://www.linkedin.com/in/sap586/" target="_blank" rel="noopener">https://www.linkedin.com/in/sap586/</a>
                 </header>
 
 
-                <div>
-                  <h2></h2>
-                  <h2></h2>
-                  <h2></h2>
-                  <p></p>
-                  <p></p>
-                  <p></p>
-                </div>
 
                 <div class="resume-block">
                   <h2>About</h2>
-                  <p>Engineer focused on automation and future-proof systems that push beyond today's limitations. Looking for a team driven by innovation, scale, and meaningful product creation.</p>
+                  <p>Engineer with a foundation in automation, machine software, and industrial systems. I have built my career across manufacturing, robotics, and embedded technologies. I value clarity, and continuous improvement. I am seeking a role that offers stronger ownership and the opportunity to contribute to impactful engineering work.</p>
                 </div>
 
                 <div class="resume-block">
                   <h2>Education</h2>
                   <div class="resume-entry education-entry">
                     <div class="resume-date">Jan 2016-17</div>
-                    <div><strong>MS, Electrical &amp; Computer Engineering</strong> <span>(3.41/4)</span><br>Polytechnic Institute of Technology, NYU</div>
+                    <div><strong>MS, Electrical &amp; Computer Engineering</strong> <span>(3.41/4)</span><br>NYU, TANDON SCHOOL OF ENGINEERING</div>
                   </div>
                   <div class="resume-entry education-entry">
                     <div class="resume-date">Jun 2010-14</div>
-                    <div><strong>BE, Instrumentation &amp; Controls</strong> <span>(7.04/10)</span><br>SVIT, GTU</div>
+                    <div><strong>BE, Instrumentation &amp; Controls</strong> <span>(7.04/10)</span><br>SVIT, GUJARAT TECHNOLOGICAL UNIVERSITY</div>
                   </div>
                 </div>
 
@@ -91,7 +96,8 @@
                   <h2>Skills</h2>
                   <div class="resume-entry skills-entry">
                     <div class="resume-label">Computer programming</div>
-                    <div>Java (primary), C/C++/C# (secondary), Git, LaTeX, HTML, CSS, JavaScript, JavaFX, AWT</div>
+                    <div>JAVA(PRIMARY), C/C++/CS (SECONDARY), GIT, PYTHON AUTOMATION</div>
+                    <div>WEB(HTML, CSS, JS), DESKTOP(JAVAFX, AWT)</div>
                   </div>
                   <div class="resume-entry skills-entry">
                     <div class="resume-label">Automation</div>
@@ -108,41 +114,67 @@
                   <article class="resume-job">
                     <div class="resume-job-heading"><strong>Software Engineer III, Universal Instruments Inc., NY</strong><em>Sep 22 - present</em></div>
                     <ul>
-                      <li>Software development for Electronics assembly machines and the Fuzion platform.</li>
-                      <li>Implemented new calibration processes for wafer locations.</li>
-                      <li>Helped implement a barcode scanner to scan barcodes on the side of parts.</li>
-                      <li>AVP (Advanced Vision Process) based fiducial find.</li>
-                      <li>Tech stack: C#, C, C++, Git, Sourcetree</li>
+                      <li>•Develop and maintain software for the Fuzion platform.</li>
+                      <li>•Implement side‑barcode scanning using the Keyence SR‑X300 for improved part traceability.</li>
+                      <li>•Redesign the Wafer AMS Accuracy Management System) to improve placement accuracy.</li>
+                      <li>•Build Selective Placement with part buffering, enabling smarter pick/hold/place decisions.</li>
+                      <li>•Cognex Quick-build integration in Fuzion platform</li>
+                      <li>•Implemented AVP Advanced Vision Processing) to allow user-defined fiducial finds.</li>                      
+                      <li>•Tech-stack : · CS · C · CPP · Git · VxWorks · Sourcetree</li>
                     </ul>
                   </article>
                   <article class="resume-job">
                     <div class="resume-job-heading"><strong>Automation Engineer, Nor-Cal Controls, CA</strong><em>Jan 22 - Jul 22</em></div>
-                    <ul><li>Automation software for solar power plants.</li><li>Tech stack: Ignition SCADA, GE PLC, SEL-RTAC, Red Lion</li></ul>
+                    <ul>
+                      <li>◦ Developed automation software for utility‑scale solar power plants</li>
+                      <li>◦ Tech stack: Ignition SCADA · GE PLC · SEL‑RTAC · Red Lion</li>
+                    </ul>
                   </article>
                   <article class="resume-job">
                     <div class="resume-job-heading"><strong>Software Engineer - Machine Automation, Mini-Circuits, NY</strong><em>Feb 18 - Nov 21</em></div>
-                    <ul><li>Provided software support for pick-and-place rotary machine development.</li><li>Built back-end and front-end web applications.</li><li>Tech stack: Java, JavaFX, HTML, CSS, JavaScript</li></ul>
+                    <ul>
+                      <li>◦ Developed automation software for pick‑and‑place rotary machines with computer vision inspection.</li>
+                      <li>◦ Implemented the new shopping cart system for the online store https://www.minicircuits.com/</li>
+                      <li>◦ Developed enterprise application software for internal engineering teams.</li>
+                      <li>◦ Tech stack: Java · JavaFX · HTML · CSS · JavaScript</li>
+                    </ul>
                   </article>
                   <article class="resume-job">
                     <div class="resume-job-heading"><strong>Developer Intern, RevMax Fleet Optimization, NY</strong><em>Sep - Dec 17</em></div>
-                    <ul><li>Developed SidewalkIQ sensor firmware using Doppler radar to monitor sidewalk activities.</li><li>Deployed sensors at various NYC locations and improved data storage and transfer efficiency.</li><li>Tech stack: Arduino-C</li></ul>
+                    <ul>
+                      <li>◦ Developed firmware for the SidewalkIQ sensor using Doppler radar to monitor sidewalk activity.</li>
+                      <li>◦ Deployed sensors at multiple NYC locations and validated field performance.</li>
+                      <li>◦ Conducted R&D to improve data consistency and optimize storage and transfer to backend servers.</li>
+                      <li>◦ Tech stack : · Arduino-C ·</li>
+                    </ul>
                   </article>
                   <article class="resume-job">
                     <div class="resume-job-heading"><strong>Instructor, ITEST Program, Robotics &amp; Mechatronics, NYU</strong><em>May - Aug 17</em></div>
-                    <ul><li>Mentored the Robotics Club programming team for FIRST Robotics and VEX Robotics competitions.</li><li>Taught computer programming concepts to the Robotics Club team.</li></ul>
+                    <ul>
+                      <li>◦ Mentored to Robotics Club Programming Team for Robotics competitions First Robotics & Vex Robotics).</li>
+                      <li>◦ Taught concepts of Computer Programming to Robotics Club Team.</li>
+                    </ul>
                   </article>
                   <article class="resume-job">
                     <div class="resume-job-heading"><strong>Lead Instructor, CREST Program, NYU</strong><em>Feb 18 - Nov 21</em></div>
-                    <ul><li>Trained high school interns in Arduino C, IoT, robotics, and 3D printing.</li><li>Led autonomous car and wireless robot controller projects.</li></ul>
+                    <ul>
+                      <li>◦ Training High School Interns with Computer Programming Arduino C, IoT, Robotics & 3DPrinting activities.</li>
+                      <li>◦ Led STEM projects including :</li>
+                      <li>- Autonomous Car Mouse in a Maze) - STM32 Board: https://github.com/sap586/RTES_Project</li>
+                      <li>- Wireless Robot Controller - Arduino: https://github.com/sap586/WirelessRobotDay5Activity</li>
+                    </ul>
                   </article>
                   <article class="resume-job">
                     <div class="resume-job-heading"><strong>Design Engineer, Prima Automation, IN</strong><em>Jun 14 - Jan 16</em></div>
-                    <ul><li>PLC, SCADA, Siemens, Allen-Bradley, front-end UX, E-plan, and AutoCAD.</li><li>Electrical and control panel layout.</li></ul>
+                    <ul>
+                      <li>◦ Programmed Siemens PLCs using TIA Portal and developed HMI screens for industrial automation projects.</li>
+                      <li>◦ Designed electrical and control panels using AutoCAD.</li>
+                      <li>◦ Created detailed electrical schematics and wiring diagrams using E‑plan.</li>
                   </article>
-                  <article class="resume-job">
+                  <!--article class="resume-job">
                     <div class="resume-job-heading"><strong>Trainee Engineer, Neoplast (I) Pvt. Ltd., IN</strong><em>Aug 13 - May 14</em></div>
                     <ul><li>PLC, SCADA, and Siemens systems.</li></ul>
-                  </article>
+                  </article-->
                 </div>
               </div>
             </div>
