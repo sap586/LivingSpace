@@ -1,192 +1,84 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Professional resume for Sagar, an engineer focused on automation and software systems.">
-  <link rel="shortcut icon" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900|Oswald:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/aos.css">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Professional Resume | Sagar</title>
+    <meta charset="UTF-8">
+    <title>PDF Host Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+        }
+        #pdf-container {
+            width: 100%;
+            height: calc(100vh - 30px);
+        }
+        #time-marquee {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: #222;
+            color: #fff;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        #time-text {
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: scroll-left 15s linear infinite;
+        }
+        @keyframes scroll-left {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
 </head>
+<body>
 
-<script>
-  window.onload = function() {
-    const link = document.createElement('a');
-    link.href = "LaTeX/sap586.pdf";
-    link.download = "sap586.pdf";   // optional: forces download name
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-</script>
+    <!-- Replace sample.pdf with your actual PDF file name -->
+    <iframe id="pdf-container" src="LaTeX/sap586.pdf" frameborder="0"></iframe>
 
-
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
-  <div class="site-wrap">
-    <div class="site-mobile-menu site-navbar-target">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
+    <div id="time-marquee">
+        <div id="time-text"></div>
     </div>
 
-    <header class="header-bar d-flex d-lg-block align-items-center site-navbar-target" data-aos="fade-right">
-      <div class="site-logo">
-        <a href="index.html"><img src="favicon.png" width="45" height="45" alt="Sagar home"></a>
-      </div>
+    <script>
+        function pad(n, width = 2) {
+            return n.toString().padStart(width, "0");
+        }
 
-      <div class="d-inline-block d-lg-none ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
+        function updateTime() {
+            const now = new Date();
 
-      <div class="main-menu">
-        <ul class="js-clone-nav">
-          <li><a href="Resume.html" class="nav-link active">Professional Resume</a></li>
-        </ul>
+            let month = pad(now.getMonth() + 1);
+            let day = pad(now.getDate());
+            let year = now.getFullYear();
 
-        <ul class="social js-clone-nav">
-          <li><a href="https://github.com/sap586"><span class="icon-github"></span></a></li>
-        </ul>
-      </div>
-    </header>
+            let hours = now.getHours();
+            const ampm = hours >= 12 ? "PM" : "AM";
+            hours = hours % 12;
+            if (hours === 0) hours = 12;
 
-    <main class="main-content">
-      <div class="container-fluid site-section">
+            let hh = pad(hours);
+            let mm = pad(now.getMinutes());
+            let ss = pad(now.getSeconds());
+            let mls = pad(now.getMilliseconds(), 3);
 
-        <section class="site-section resume-section" id="section-resume">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-md-10">
+            const formatted =
+                `${month}/${day}/${year}-${hh}:${mm}:${ss}:${mls}${ampm}`;
 
-                <header class="resume-contact-header">
-                  <!--div class="resume-contact-mark" aria-hidden="true">&#63743;</div-->
-                  <h1>Sagar Panchal</h1>
-                  <div class="resume-contact-details">
-                    <a href="mailto:sap586@nyu.edu">sap586@nyu.edu</a>
-                    <span>+1 (607) 314-0114</span>
-                    <span>Binghamton, NY</span>
-                  </div>
-                  <a href="https://www.linkedin.com/in/sap586/" target="_blank" rel="noopener">https://www.linkedin.com/in/sap586/</a>
-                </header>
+            document.getElementById("time-text").textContent =
+                `${formatted}`;
+        }
 
+        // Update every 100 ms for millisecond display
+        setInterval(updateTime, 100);
+        updateTime();
+    </script>
 
-
-                <div class="resume-block">
-                  <h2>About</h2>
-                  <p>Engineer with a foundation in automation, machine software, and industrial systems. I have built my career across manufacturing, robotics, and embedded technologies. I value clarity, and continuous improvement. I am seeking a role that offers stronger ownership and the opportunity to contribute to impactful engineering work.</p>
-                </div>
-
-                <div class="resume-block">
-                  <h2>Education</h2>
-                  <div class="resume-entry education-entry">
-                    <div class="resume-date">Jan 2016-17</div>
-                    <div><strong>MS, Electrical &amp; Computer Engineering</strong> <span>(3.41/4)</span><br>NYU, TANDON SCHOOL OF ENGINEERING</div>
-                  </div>
-                  <div class="resume-entry education-entry">
-                    <div class="resume-date">Jun 2010-14</div>
-                    <div><strong>BE, Instrumentation &amp; Controls</strong> <span>(7.04/10)</span><br>SVIT, GUJARAT TECHNOLOGICAL UNIVERSITY</div>
-                  </div>
-                </div>
-
-                <div class="resume-block">
-                  <h2>Skills</h2>
-                  <div class="resume-entry skills-entry">
-                    <div class="resume-label">Computer programming</div>
-                    <div>JAVA(PRIMARY), C/C++/CS (SECONDARY), GIT, PYTHON AUTOMATION</div>
-                    <div>WEB(HTML, CSS, JS), DESKTOP(JAVAFX, AWT)</div>
-                  </div>
-                  <div class="resume-entry skills-entry">
-                    <div class="resume-label">Automation</div>
-                    <div>Microcontrollers, single-board computers, PLCs (ladder logic, FBD), HMI/SCADA</div>
-                  </div>
-                  <div class="resume-entry skills-entry">
-                    <div class="resume-label">Industries served</div>
-                    <div>Machinery, manufacturing, control panels, solar energy, education</div>
-                  </div>
-                </div>
-
-                <div class="resume-block">
-                  <h2>Work Experience</h2>
-                  <article class="resume-job">
-                    <div class="resume-job-heading"><strong>Software Engineer III, Universal Instruments Inc., NY</strong><em>Sep 22 - present</em></div>
-                    <ul>
-                      <li>•Develop and maintain software for the Fuzion platform.</li>
-                      <li>•Implement side‑barcode scanning using the Keyence SR‑X300 for improved part traceability.</li>
-                      <li>•Redesign the Wafer AMS Accuracy Management System) to improve placement accuracy.</li>
-                      <li>•Build Selective Placement with part buffering, enabling smarter pick/hold/place decisions.</li>
-                      <li>•Cognex Quick-build integration in Fuzion platform</li>
-                      <li>•Implemented AVP Advanced Vision Processing) to allow user-defined fiducial finds.</li>                      
-                      <li>•Tech-stack : · CS · C · CPP · Git · VxWorks · Sourcetree</li>
-                    </ul>
-                  </article>
-                  <article class="resume-job">
-                    <div class="resume-job-heading"><strong>Automation Engineer, Nor-Cal Controls, CA</strong><em>Jan 22 - Jul 22</em></div>
-                    <ul>
-                      <li>◦ Developed automation software for utility‑scale solar power plants</li>
-                      <li>◦ Tech stack: Ignition SCADA · GE PLC · SEL‑RTAC · Red Lion</li>
-                    </ul>
-                  </article>
-                  <article class="resume-job">
-                    <div class="resume-job-heading"><strong>Software Engineer - Machine Automation, Mini-Circuits, NY</strong><em>Feb 18 - Nov 21</em></div>
-                    <ul>
-                      <li>◦ Developed automation software for pick‑and‑place rotary machines with computer vision inspection.</li>
-                      <li>◦ Implemented the new shopping cart system for the online store https://www.minicircuits.com/</li>
-                      <li>◦ Developed enterprise application software for internal engineering teams.</li>
-                      <li>◦ Tech stack: Java · JavaFX · HTML · CSS · JavaScript</li>
-                    </ul>
-                  </article>
-                  <article class="resume-job">
-                    <div class="resume-job-heading"><strong>Developer Intern, RevMax Fleet Optimization, NY</strong><em>Sep - Dec 17</em></div>
-                    <ul>
-                      <li>◦ Developed firmware for the SidewalkIQ sensor using Doppler radar to monitor sidewalk activity.</li>
-                      <li>◦ Deployed sensors at multiple NYC locations and validated field performance.</li>
-                      <li>◦ Conducted R&D to improve data consistency and optimize storage and transfer to backend servers.</li>
-                      <li>◦ Tech stack : · Arduino-C ·</li>
-                    </ul>
-                  </article>
-                  <article class="resume-job">
-                    <div class="resume-job-heading"><strong>Instructor, ITEST Program, Robotics &amp; Mechatronics, NYU</strong><em>May - Aug 17</em></div>
-                    <ul>
-                      <li>◦ Mentored to Robotics Club Programming Team for Robotics competitions First Robotics & Vex Robotics).</li>
-                      <li>◦ Taught concepts of Computer Programming to Robotics Club Team.</li>
-                    </ul>
-                  </article>
-                  <article class="resume-job">
-                    <div class="resume-job-heading"><strong>Lead Instructor, CREST Program, NYU</strong><em>Feb 18 - Nov 21</em></div>
-                    <ul>
-                      <li>◦ Training High School Interns with Computer Programming Arduino C, IoT, Robotics & 3DPrinting activities.</li>
-                      <li>◦ Led STEM projects including :</li>
-                      <li>- Autonomous Car Mouse in a Maze) - STM32 Board: https://github.com/sap586/RTES_Project</li>
-                      <li>- Wireless Robot Controller - Arduino: https://github.com/sap586/WirelessRobotDay5Activity</li>
-                    </ul>
-                  </article>
-                  <article class="resume-job">
-                    <div class="resume-job-heading"><strong>Design Engineer, Prima Automation, IN</strong><em>Jun 14 - Jan 16</em></div>
-                    <ul>
-                      <li>◦ Programmed Siemens PLCs using TIA Portal and developed HMI screens for industrial automation projects.</li>
-                      <li>◦ Designed electrical and control panels using AutoCAD.</li>
-                      <li>◦ Created detailed electrical schematics and wiring diagrams using E‑plan.</li>
-                  </article>
-                  <!--article class="resume-job">
-                    <div class="resume-job-heading"><strong>Trainee Engineer, Neoplast (I) Pvt. Ltd., IN</strong><em>Aug 13 - May 14</em></div>
-                    <ul><li>PLC, SCADA, and Siemens systems.</li></ul>
-                  </article-->
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
-  </div>
-
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>
