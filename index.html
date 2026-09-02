@@ -39,45 +39,8 @@
 </head>
 <body>
 
-    <!-- Replace sample.pdf with your actual PDF file name -->
-    <iframe id="pdf-container" src="LaTeX/sap586.pdf" frameborder="0"></iframe>
-
-    <div id="time-marquee">
-        <div id="time-text"></div>
-    </div>
-
     <script>
-        function pad(n, width = 2) {
-            return n.toString().padStart(width, "0");
-        }
-
-        function updateTime() {
-            const now = new Date();
-
-            let month = pad(now.getMonth() + 1);
-            let day = pad(now.getDate());
-            let year = now.getFullYear();
-
-            let hours = now.getHours();
-            const ampm = hours >= 12 ? "PM" : "AM";
-            hours = hours % 12;
-            if (hours === 0) hours = 12;
-
-            let hh = pad(hours);
-            let mm = pad(now.getMinutes());
-            let ss = pad(now.getSeconds());
-            let mls = pad(now.getMilliseconds(), 3);
-
-            const formatted =
-                `${month}/${day}/${year}-${hh}:${mm}:${ss}:${mls}${ampm}`;
-
-            document.getElementById("time-text").textContent =
-                `${formatted}`;
-        }
-
-        // Update every 100 ms for millisecond display
-        setInterval(updateTime, 100);
-        updateTime();
+        window.location.href = "https://sap586.github.io/Resume/";
     </script>
 
 </body>
