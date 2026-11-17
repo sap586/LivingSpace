@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMT Nozzle Pick Simulation</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.controls {
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 16px;
+    margin: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+canvas {
+    background: white;
+    border: 1px solid #ccc;
+}
+
+#status {
+    margin-top: 12px;
+    font-weight: bold;
+    min-height: 25px;
+}
+
+.legend {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #555;
+}
+
+.stepModeOn {
+    background: #4caf50;
+    color: white;
+}
+
+.nextButtonWaiting {
+    background: #4caf50;
+    color: white;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<h2>SMT Nozzle Pick Simulation</h2>
+
+<div class="controls">
+    <button onclick="runCase1()">
+        Case 1 - Fast Pick
+    </button>
+
+    <button onclick="runCase2()">
+        Case 2 - Fast + Slow Approach
+    </button>
+
+    <button onclick="runCase3()">
+        Case 3 - Smooth Pick
+    </button>
+
+    <button onclick="resetSimulation()">
+        Reset
+    </button>
+
+    <br><br>
+
+    <button
+        id="stepModeBtn"
+        onclick="toggleStepMode()">
+        Step Mode: OFF
+    </button>
+
+    <button
+        id="nextStepBtn"
+        onclick="nextStep()"
+        disabled>
+        Next Step
+    </button>
+</div>
+
+<canvas id="canvas" width="700" height="350"></canvas>
+
+<div id="status">Ready</div>
+
+<div class="legend">
+    Blue = Component Height |
+    Red = Pickup Height |
+    Green = Vacuum ON
+</div>
+
+<script>
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+//
+// Machine Positions
+//
+const START_Y     = 40;
+const APPROACH_Y  = 150;
+const PICK_Y      = 180;
+const COMPONENT_Y = 220;
+const LIFT_Y      = 70;
+
+//
+// Objects
+//
+const nozzle = {
+    x: 350,
+    y: START_Y
+};
+
+const component = {
+    x: 335,
+    y: COMPONENT_Y,
+    attached: false
+};
+
+//
+// State
+//
+let vacuumEnabled = false;
+
+let stepMode = false;
+
+let waitingStepCallback = null;
+
+let simulationRunning = false;
+
+//
+// Helpers
+//
+function setStatus(text)
+{
+    document.getElementById(
+        "status"
+    ).innerText = text;
+}
+
+function toggleStepMode()
+{
+    stepMode = !stepMode;
+
+    const btn =
+        document.getElementById(
+            "stepModeBtn"
+        );
+
+    btn.innerText =
+        "Step Mode: " +
+        (stepMode ? "ON" : "OFF");
+
+    btn.className =
+        stepMode
+            ? "stepModeOn"
+            : "";
+
+    document.getElementById(
+        "nextStepBtn"
+    ).disabled = !stepMode;
+}
+
+function enableNextStepButton(enable)
+{
+    const btn =
+        document.getElementById(
+            "nextStepBtn"
+        );
+
+    if (!stepMode)
+    {
+        btn.className = "";
+        return;
+    }
+
+    btn.className =
+        enable
+            ? "nextButtonWaiting"
+            : "";
+}
+
+function nextStep()
+{
+    if (!waitingStepCallback)
+    {
+        return;
+    }
+
+    enableNextStepButton(false);
+
+    const callback =
+        waitingStepCallback;
+
+    waitingStepCallback = null;
+
+    callback();
+}
+
+function waitForNextStep(
+    label,
+    callback
+)
+{
+    if (!stepMode)
+    {
+        callback();
+        return;
+    }
+
+    setStatus(
+        label +
+        " - Waiting For Next Step"
+    );
+
+    enableNextStepButton(true);
+
+    waitingStepCallback = callback;
+}
+
+//
+// Drawing
+//
+function drawGuideLines()
+{
+    ctx.setLineDash([5, 5]);
+
+    ctx.strokeStyle = "red";
+    ctx.beginPath();
+    ctx.moveTo(40, PICK_Y);
+    ctx.lineTo(660, PICK_Y);
+    ctx.stroke();
+
+    ctx.strokeStyle = "blue";
+    ctx.beginPath();
+    ctx.moveTo(40, COMPONENT_Y);
+    ctx.lineTo(660, COMPONENT_Y);
+    ctx.stroke();
+
+    ctx.setLineDash([]);
+
+    ctx.fillStyle = "red";
+    ctx.fillText(
+        "Pickup Height",
+        50,
+        PICK_Y - 5
+    );
+
+    ctx.fillStyle = "blue";
+    ctx.fillText(
+        "Component Height",
+        50,
+        COMPONENT_Y - 5
+    );
+}
+
+function drawFeeder()
+{
+    ctx.strokeStyle = "#888";
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        150,
+        COMPONENT_Y + 20
+    );
+
+    ctx.lineTo(
+        550,
+        COMPONENT_Y + 20
+    );
+
+    ctx.stroke();
+}
+
+function drawNozzle()
+{
+    ctx.fillStyle = "#777";
+
+    ctx.fillRect(
+        nozzle.x - 4,
+        0,
+        8,
+        nozzle.y
+    );
+
+    ctx.fillStyle = "#444";
+
+    ctx.beginPath();
+
+    ctx.arc(
+        nozzle.x,
+        nozzle.y,
+        8,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.fill();
+
+    if (vacuumEnabled)
+    {
+        ctx.fillStyle = "green";
+
+        ctx.beginPath();
+
+        ctx.arc(
+            nozzle.x + 20,
+            nozzle.y,
+            6,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
+    }
+}
+
+function drawComponent()
+{
+    let y;
+
+    if (component.attached)
+    {
+        y = nozzle.y + 8;
+    }
+    else
+    {
+        y = component.y;
+    }
+
+    ctx.fillStyle = "#1976d2";
+
+    ctx.fillRect(
+        component.x,
+        y,
+        30,
+        12
+    );
+
+    ctx.fillStyle = "#000";
+
+    ctx.fillText(
+        "Component",
+        component.x - 10,
+        y + 28
+    );
+}
+
+function draw()
+{
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    drawGuideLines();
+
+    drawFeeder();
+
+    drawNozzle();
+
+    drawComponent();
+}
+
+//
+// Animation Engine
+//
+function animateMove(
+    startY,
+    endY,
+    duration,
+    easing,
+    callback
+)
+{
+    const startTime =
+        performance.now();
+
+    function frame(now)
+    {
+        let t =
+            (now - startTime) /
+            duration;
+
+        t = Math.min(
+            t,
+            1
+        );
+
+        nozzle.y =
+            startY +
+            (
+                endY - startY
+            ) *
+            easing(t);
+
+        draw();
+
+        if (t < 1)
+        {
+            requestAnimationFrame(
+                frame
+            );
+        }
+        else
+        {
+            callback?.();
+        }
+    }
+
+    requestAnimationFrame(
+        frame
+    );
+}
+
+function easeOutCubic(t)
+{
+    return 1 -
+        Math.pow(
+            1 - t,
+            3
+        );
+}
+
+//
+// Process Steps
+//
+function performVacuumOn()
+{
+    vacuumEnabled = true;
+
+    component.attached = true;
+
+    draw();
+
+    setStatus(
+        "Vacuum ON - Component Attached"
+    );
+}
+
+function liftComponent()
+{
+    setStatus(
+        "Lifting Component"
+    );
+
+    animateMove(
+        PICK_Y,
+        LIFT_Y,
+        350,
+        easeOutCubic,
+        () =>
+        {
+            waitForNextStep(
+                "Lift Finished",
+                () =>
+                {
+                    setStatus(
+                        "Pickup Complete"
+                    );
+
+                    simulationRunning = false;
+                }
+            );
+        }
+    );
+}
+
+//
+// CASE 1
+//
+function runCase1()
+{
+    if (simulationRunning)
+    {
+        return;
+    }
+
+    simulationRunning = true;
+
+    resetSimulation(false);
+
+    waitForNextStep(
+        "Ready To Start",
+        () =>
+        {
+            setStatus(
+                "Case 1 - Fast Down"
+            );
+
+            animateMove(
+                START_Y,
+                PICK_Y,
+                250,
+                t => t,
+                () =>
+                {
+                    waitForNextStep(
+                        "Fast Down Complete",
+                        () =>
+                        {
+                            performVacuumOn();
+
+                            waitForNextStep(
+                                "Vacuum Activated",
+                                () =>
+                                {
+                                    liftComponent();
+                                }
+                            );
+                        }
+                    );
+                }
+            );
+        }
+    );
+}
+
+//
+// CASE 2
+//
+function runCase2()
+{
+    if (simulationRunning)
+    {
+        return;
+    }
+
+    simulationRunning = true;
+
+    resetSimulation(false);
+
+    waitForNextStep(
+        "Ready To Start",
+        () =>
+        {
+            setStatus(
+                "Case 2 - Fast Approach"
+            );
+
+            animateMove(
+                START_Y,
+                APPROACH_Y,
+                180,
+                t => t,
+                () =>
+                {
+                    waitForNextStep(
+                        "Fast Approach Complete",
+                        () =>
+                        {
+                            setStatus(
+                                "Slow Final Approach"
+                            );
+
+                            animateMove(
+                                APPROACH_Y,
+                                PICK_Y,
+                                600,
+                                t => t,
+                                () =>
+                                {
+                                    waitForNextStep(
+                                        "Slow Approach Complete",
+                                        () =>
+                                        {
+                                            performVacuumOn();
+
+                                            waitForNextStep(
+                                                "Vacuum Activated",
+                                                () =>
+                                                {
+                                                    liftComponent();
+                                                }
+                                            );
+                                        }
+                                    );
+                                }
+                            );
+                        }
+                    );
+                }
+            );
+        }
+    );
+}
+
+//
+// CASE 3
+//
+function runCase3()
+{
+    if (simulationRunning)
+    {
+        return;
+    }
+
+    simulationRunning = true;
+
+    resetSimulation(false);
+
+    waitForNextStep(
+        "Ready To Start",
+        () =>
+        {
+            setStatus(
+                "Case 3 - Smooth Motion"
+            );
+
+            animateMove(
+                START_Y,
+                PICK_Y,
+                900,
+                easeOutCubic,
+                () =>
+                {
+                    waitForNextStep(
+                        "Smooth Move Complete",
+                        () =>
+                        {
+                            performVacuumOn();
+
+                            waitForNextStep(
+                                "Vacuum Activated",
+                                () =>
+                                {
+                                    liftComponent();
+                                }
+                            );
+                        }
+                    );
+                }
+            );
+        }
+    );
+}
+
+//
+// Reset
+//
+function resetSimulation(
+    stopRunning = true
+)
+{
+    nozzle.y = START_Y;
+
+    component.attached = false;
+
+    vacuumEnabled = false;
+
+    waitingStepCallback =
+        null;
+
+    enableNextStepButton(
+        false
+    );
+
+    if (stopRunning)
+    {
+        simulationRunning =
+            false;
+
+        setStatus(
+            "Ready"
+        );
+    }
+
+    draw();
+}
+
+draw();
+
+</script>
+
+</body>
+</html>
