@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Planet Viewer</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+    text-align:center;
+    margin:20px;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+#status{
+    color:#666;
+    margin-bottom:10px;
+}
+
+#currentDate{
+    font-size:22px;
+    font-weight:bold;
+    margin:15px;
+}
+
+.controls{
+    margin:15px;
+}
+
+button{
+    padding:8px 15px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+#slider{
+    width:90%;
+}
+
+canvas{
+    background:white;
+    border:1px solid #ccc;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Planet Viewer</h1>
+
+<div id="status">
+Loading...
+</div>
+
+<div id="currentDate">
+Waiting for data...
+</div>
+
+<div class="controls">
+
+<button id="prevBtn">
+◀ Prev
+</button>
+
+<button id="nextBtn">
+Next ▶
+</button>
+
+</div>
+
+<input
+    id="slider"
+    type="range"
+    min="0"
+    max="0"
+    value="0"
+/>
+
+<br><br>
+
+<canvas
+    id="chart"
+    width="900"
+    height="900">
+</canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+
+<script>
+
+let dataset = [];
+
+const slider =
+    document.getElementById('slider');
+
+const status =
+    document.getElementById('status');
+
+const dateLabel =
+    document.getElementById('currentDate');
+
+const canvas =
+    document.getElementById('chart');
+
+const ctx =
+    canvas.getContext('2d');
+
+window.onload = loadData;
+
+async function loadData(){
+
+    try{
+
+        status.textContent =
+            "Loading CSV...";
+
+        const response =
+            await fetch(
+                "output_full_200_years.csv.gz"
+            );
+
+        if(!response.ok){
+
+            throw new Error(
+                "Cannot find output_full_200_years.csv.gz"
+            );
+        }
+		
+		const compressed =
+			await response.arrayBuffer();
+
+		const text =
+			pako.ungzip(
+				new Uint8Array(compressed),
+				{ to: "string" }
+			);
+
+        status.textContent =
+            "Parsing rows...";
+
+        const lines =
+            text.trim().split("\n");
+
+        dataset =
+            lines.slice(1)
+                 .map(
+                    line =>
+                    line.split(",")
+                 );
+
+        slider.max =
+            dataset.length - 1;
+
+        jumpToCurrentDate();
+
+        drawCurrent();
+
+        status.textContent =
+            `Loaded ${dataset.length.toLocaleString()} rows`;
+
+    }
+    catch(ex){
+
+        console.error(ex);
+
+        status.textContent =
+            ex.message;
+    }
+}
+
+function jumpToCurrentDate(){
+
+    const start =
+        new Date(
+            "1900-01-01T01:00:00"
+        );
+
+    const now =
+        new Date();
+
+    const diffHours =
+        (now - start)
+        /
+        (1000 * 60 * 60);
+
+    let index =
+        Math.round(
+            diffHours / 2
+        );
+
+    index =
+        Math.max(
+            0,
+            Math.min(
+                index,
+                dataset.length - 1
+            )
+        );
+
+    slider.value = index;
+}
+
+slider.addEventListener(
+    "input",
+    drawCurrent
+);
+
+document
+.getElementById("prevBtn")
+.addEventListener(
+    "click",
+    ()=>{
+
+        slider.value =
+            Math.max(
+                0,
+                Number(slider.value)-1
+            );
+
+        drawCurrent();
+    }
+);
+
+document
+.getElementById("nextBtn")
+.addEventListener(
+    "click",
+    ()=>{
+
+        slider.value =
+            Math.min(
+                dataset.length-1,
+                Number(slider.value)+1
+            );
+
+        drawCurrent();
+    }
+);
+
+function decodePosition(text){
+
+    const p =
+        text.trim().split(" ");
+
+    return {
+
+        degree:
+            Number(p[0]),
+
+        minute:
+            Number(p[1])
+    };
+}
+
+function drawCurrent(){
+
+    if(dataset.length===0)
+        return;
+
+    const row =
+        dataset[slider.value];
+
+    dateLabel.textContent =
+        row[0];
+
+    drawChart(row);
+}
+
+function drawChart(row){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    const cx = 450;
+    const cy = 450;
+
+    //--------------------------------
+    // ZODIAC OUTER CIRCLE
+    //--------------------------------
+
+    const zodiacRadius = 350;
+
+    ctx.beginPath();
+
+    ctx.arc(
+        cx,
+        cy,
+        zodiacRadius,
+        0,
+        Math.PI*2
+    );
+
+    ctx.stroke();
+
+    //--------------------------------
+    // 12 SIGNS
+    //--------------------------------
+
+    for(let i=0;i<12;i++){
+
+        const angle =
+            (i*30 - 90)
+            * Math.PI / 180;
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            cx,
+            cy
+        );
+
+        ctx.lineTo(
+            cx +
+            zodiacRadius *
+            Math.cos(angle),
+
+            cy +
+            zodiacRadius *
+            Math.sin(angle)
+        );
+
+        ctx.stroke();
+    }
+
+    //--------------------------------
+    // PLANETS
+    //--------------------------------
+
+    const planets = [
+
+        {name:"Su",col:1,r:90,color:"#ff9800"},
+        {name:"Mo",col:2,r:130,color:"#9c27b0"},
+        {name:"Me",col:3,r:170,color:"#03a9f4"},
+        {name:"Ve",col:4,r:210,color:"#673ab7"},
+        {name:"Ma",col:5,r:250,color:"#f44336"},
+        {name:"Ju",col:6,r:290,color:"#4caf50"},
+        {name:"Sa",col:7,r:330,color:"#212121"},
+
+        {name:"Ra",col:8,r:400,color:"#795548"},
+        {name:"Ke",col:10,r:450,color:"#607d8b"}
+
+    ];
+
+    for(const planet of planets){
+
+        const pos =
+            decodePosition(
+                row[planet.col]
+            );
+
+        const zodiac =
+            pos.degree +
+            pos.minute/60;
+
+        const angle =
+            (zodiac - 90)
+            * Math.PI / 180;
+
+        const x =
+            cx +
+            planet.r *
+            Math.cos(angle);
+
+        const y =
+            cy +
+            planet.r *
+            Math.sin(angle);
+
+        ctx.beginPath();
+
+        ctx.arc(
+            x,
+            y,
+            18,
+            0,
+            Math.PI*2
+        );
+
+        ctx.fillStyle =
+            planet.color;
+
+        ctx.fill();
+
+        ctx.fillStyle =
+            "white";
+
+        ctx.font =
+            "bold 12px Arial";
+
+        ctx.textAlign =
+            "center";
+
+        ctx.textBaseline =
+            "middle";
+
+        ctx.fillText(
+            planet.name,
+            x,
+            y
+        );
+    }
+
+    //--------------------------------
+    // CENTER
+    //--------------------------------
+
+    ctx.beginPath();
+
+    ctx.arc(
+        cx,
+        cy,
+        4,
+        0,
+        Math.PI*2
+    );
+
+    ctx.fillStyle =
+        "black";
+
+    ctx.fill();
+}
+
+</script>
+
+</body>
+</html>
