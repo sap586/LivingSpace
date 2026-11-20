@@ -69,6 +69,14 @@ Waiting for data...
 ◀ Prev
 </button>
 
+<button id="todayBtn">
+Today
+</button>
+
+<button id="viewBtn">
+North Indian
+</button>
+
 <button id="nextBtn">
 Next ▶
 </button>
@@ -96,6 +104,8 @@ Next ▶
 <script>
 
 let dataset = [];
+
+let currentView = "circle";
 
 const slider =
     document.getElementById('slider');
@@ -244,6 +254,45 @@ document
     }
 );
 
+document
+.getElementById("todayBtn")
+.addEventListener(
+    "click",
+    ()=>{
+        jumpToCurrentDate();
+        drawCurrent();
+    }
+);
+
+document
+.getElementById("viewBtn")
+.addEventListener(
+    "click",
+    ()=>{
+
+        if(currentView==="circle")
+        {
+            currentView="north";
+
+            document
+            .getElementById("viewBtn")
+            .textContent =
+            "Circle";
+        }
+        else
+        {
+            currentView="circle";
+
+            document
+            .getElementById("viewBtn")
+            .textContent =
+            "North Indian";
+        }
+
+        drawCurrent();
+    }
+);
+
 function decodePosition(text){
 
     const p =
@@ -270,10 +319,17 @@ function drawCurrent(){
     dateLabel.textContent =
         row[0];
 
-    drawChart(row);
+    if(currentView==="circle")
+	{
+		drawCircleChart(row);
+	}
+	else
+	{
+		drawNorthIndianChart(row);
+	}
 }
 
-function drawChart(row){
+function drawCircleChart(row){
 
     ctx.clearRect(
         0,
@@ -429,6 +485,200 @@ function drawChart(row){
         "black";
 
     ctx.fill();
+}
+
+const orbitRadius =
+{
+	"Su":10,
+	"Mo":25,
+	"Me":40,
+	"Ve":55,
+	"Ma":70,
+	"Ju":85,
+	"Sa":100,
+	"Ra":115,
+	"Ke":130
+};
+
+function drawNorthIndianChart(row)
+{
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    const left = 150;
+    const top = 150;
+    const size = 600;
+
+    ctx.lineWidth = 2;
+
+    ctx.strokeRect(
+        left,
+        top,
+        size,
+        size
+    );
+
+    ctx.beginPath();
+
+    ctx.moveTo(left,top);
+    ctx.lineTo(left+size,top+size);
+
+    ctx.moveTo(left+size,top);
+    ctx.lineTo(left,top+size);
+
+    ctx.moveTo(left+size/2,top);
+    ctx.lineTo(left+size,top+size/2);
+
+    ctx.moveTo(left+size,top+size/2);
+    ctx.lineTo(left+size/2,top+size);
+
+    ctx.moveTo(left+size/2,top+size);
+    ctx.lineTo(left,top+size/2);
+
+    ctx.moveTo(left,top+size/2);
+    ctx.lineTo(left+size/2,top);
+
+    ctx.stroke();
+
+    const centers =
+    [
+        [450,250],
+        [600,225],
+        [675,300],
+        [675,450],
+        [675,600],
+        [600,675],
+
+        [450,650],
+        [300,675],
+        [225,600],
+        [225,450],
+        [225,300],
+        [300,225]
+    ];
+
+    ctx.fillStyle = "red";
+
+	ctx.font = "bold 28px Arial";
+
+	ctx.fillText(
+		"3",
+		450,
+		250
+	);
+
+    const planets =
+    [
+        ["Su",1],
+        ["Mo",2],
+        ["Me",3],
+        ["Ve",4],
+        ["Ma",5],
+        ["Ju",6],
+        ["Sa",7],
+        ["Ra",8],
+        ["Ke",10]
+    ];
+
+    const signToHouse =
+	{
+		2:0,    // Gemini
+		1:1,    // Taurus
+		0:2,    // Aries
+		11:3,   // Pisces
+		10:4,   // Aquarius
+		9:5,    // Capricorn
+		8:6,    // Sagittarius
+		7:7,    // Scorpio
+		6:8,    // Libra
+		5:9,    // Virgo
+		4:10,   // Leo
+		3:11    // Cancer
+	};
+
+    planets.forEach(p=>{
+
+		const pos =
+			decodePosition(
+				row[p[1]]
+			);
+
+		const sign =
+			Math.floor(
+				pos.degree / 30
+			);
+
+		const house =
+			signToHouse[sign];
+
+		if(house===undefined)
+			return;
+
+		const radius =
+			orbitRadius[p[0]];
+
+		const angle =
+			house * Math.PI / 6;
+
+		const x =
+			centers[house][0]
+			+
+			radius *
+			Math.cos(angle);
+
+		const y =
+			centers[house][1]
+			+
+			radius *
+			Math.sin(angle);
+
+		ctx.beginPath();
+
+		ctx.arc(
+			x,
+			y,
+			15,
+			0,
+			Math.PI*2
+		);
+
+		ctx.fillStyle =
+		{
+			"Su":"#ff9800",
+			"Mo":"#9c27b0",
+			"Me":"#03a9f4",
+			"Ve":"#673ab7",
+			"Ma":"#f44336",
+			"Ju":"#4caf50",
+			"Sa":"#212121",
+			"Ra":"#795548",
+			"Ke":"#607d8b"
+		}[p[0]];
+
+		ctx.fill();
+
+		ctx.fillStyle = "white";
+
+		ctx.font =
+			"bold 12px Arial";
+
+		ctx.textAlign =
+			"center";
+
+		ctx.textBaseline =
+			"middle";
+
+		ctx.fillText(
+			p[0],
+			x,
+			y
+		);
+
+	});
 }
 
 </script>
